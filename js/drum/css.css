@@ -1,0 +1,49 @@
+html {
+    font-size: 10px;
+    background: url(./images/b9r5sEL.jpg) bottom center;
+    background-size: cover;
+  }
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+  .keys {
+    min-height: 100vh;
+    /* 弹性布局 */
+    /* 键盘， 好多个键/ */
+    display: flex;
+    align-items: center; /*水平 主轴*/
+    justify-content: center; /*垂直 纵轴*/
+    /* background-color: red; */
+  }
+  .key {
+    width: 10rem;
+    border: .4rem solid black;
+    margin: 1rem;
+    font-size: 1.5rem;
+    padding: 1rem 0.5rem;
+    text-align: center;
+    color: #ffffff;
+    border-radius: .5rem;
+    background:rgba(0,0,0,.4);
+    text-shadow: 0 0 .5rem black;
+    transition: all .07s ease;
+  }
+  .key > div {
+    font-size: 4rem;
+  }
+  .sound {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    color: #ffc600;
+  }
+  .playing{
+      transform: scale(1.1);
+      background-color: #ffc600;
+      box-shadow: 0 0 1rem #ffc600;
+
+  }
+  
+  
