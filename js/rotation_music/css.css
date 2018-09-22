@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#player{
+    height: 100px;
+    width: 100px;
+    position: fixed;
+    top: 20%;
+    right: 20%;
+    border-radius: 50px;
+    background-image: url(./images/20170117110517_ZuU2a.thumb.700_0.jpeg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    animation: musicplay 5s   linear infinite;
+    animation-play-state: paused;
+}
+@keyframes musicplay{
+    0%{transform: rotate(36deg)}
+    10%{transform: rotate(72deg)}
+    20%{transform: rotate(108deg)}
+    30%{transform: rotate(144deg)}
+    40%{transform: rotate(180deg)}
+    50%{transform: rotate(216deg)}
+    60%{transform: rotate(252deg)}
+    70%{transform: rotate(288deg)}
+    80%{transform: rotate(324deg)}
+    90%{transform: rotate(360deg)}
+    100%{transform: rotate(396deg)}
+}

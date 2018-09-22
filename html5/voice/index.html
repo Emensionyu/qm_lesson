@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Voice</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="voice_container">
+  <h1>The Voiceinator 500</h1>
+  <select name="voice" id="voices">
+    <option value="">Select A Voice</option>
+  </select>
+  <label for="rate">Rate:</label>
+  <input type="range" min="0" max="3" step="0.1" value="1" name="rate">
+  <label for="pitch">Pitch:</label>
+  <input name="pitch" type="range" min="0" max="2" step="0.1">
+  <textarea name="text">
+    Hello! I love Javascript!
+  </textarea>
+  <button id="stop">Stop!</button>
+  <button id="speak">Speak</button>
+</div>
+<script>
+  let voices = [];
+  const msg = new SpeechSynthesisUtterance();
+  msg.text = document.querySelector('[name="text"]').value;
+  const speakButton = document.querySelector('#speak');
+  const options = document.querySelectorAll('[type="range"],[name="text"]');
+  const voicesDropdown = document.querySelector('[name="voice"]');
+
+  function doSpeak() {
+    speechSynthesis.speak(msg);
+  }
+
+  function setOption() {
+    // console.log(this, this.value);
+    // msg.text
+    // msg.pitch
+    // msg.rate
+    msg[this.name] = this.value;
+    doSpeak();
+  }
+  function populateVoices() {
+    voices = this.getVoices();
+    // console.log(voices);
+    let html = '';
+    for(var i = 0; i < voices.length; i++) {
+      html += `<option value="${voices[i].name}">${voices[i].name}</option>`;
+    }
+    console.log(html);
+    voicesDropdown.innerHTML = html;
+  }
+  options.forEach(function(option) {
+    option.addEventListener('change', setOption);
+  });
+
+  function setVoice () {
+    msg.voice = voices.find(voice => voice.name === this.value);
+    doSpeak();
+  }
+  speakButton.addEventListener('click', doSpeak);
+  speechSynthesis.addEventListener('voiceschanged', populateVoices);
+  voicesDropdown.addEventListener('change', setVoice);
+
+</script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,136 @@
+/* css reset  */
+* {
+    margin: 0;
+    padding: 0;
+  }
+  html, body {
+  
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  .g-wrap {
+    width: 100%;
+    height: 3366px;
+    overflow: hidden;
+    position: relative;
+    font-size: 17px;
+    color: #ffffff;
+    text-align: center;
+  }
+  
+  /*
+   * author ysw 
+   * date 9-19
+   * 中秋节首页活动上新
+   */
+  
+  /* 背景样式 */
+  .bg {
+    width: 100%;
+    position: absolute;
+  }
+  
+  .bg_1 {
+    width: 100%;
+    height: 482px;
+    overflow: hidden;
+    background:url(http://ossweb-img.qq.com/images/lol/v2/index/7th/bg_01.jpg) center top no-repeat;
+  }
+  
+  .video-bg {
+    position: absolute;
+    left: 50%;
+    margin-left: -960px;
+  }
+  .cover-img {
+    position:absolute;
+    z-index: 1;
+    top: 369px;
+    left: 50%;
+    margin-left: -960px;
+  }
+  
+  .bg_2 {
+    width: 100%;
+    height: 1853px;
+    background:url(http://ossweb-img.qq.com/images/lol/v2/index/7th/bg_02.jpg) center top no-repeat;
+  }
+  .bg_3 {
+    width: 100%;
+    height: 1122px;
+    background: url(http://ossweb-img.qq.com/images/lol/v2/index/7th/bg_03.jpg) center top no-repeat;
+  }
+  .main {
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    background-color: red;
+  }
+  
+  .btn-top-bg {
+    width: 235px;
+    height: 84px;
+    display:inline-block;
+    background: url('http://ossweb-img.qq.com/images/lol/v2/index/7th/sprite-img.png');
+    background-size:1335px 1194px;
+    color: #bea468;
+    text-align: center;
+    line-height: 84px;
+    background-position: -337px -615px;
+  }
+  
+  .btn-top-bg:hover {
+    background-position: -577px -615px;
+    color: #472c0f;
+  }
+  
+  .icon-arrow {
+    width: 26px;
+    height: 25px;
+    background-position: -1281px -706px;
+    background-image: url(http://ossweb-img.qq.com/images/lol/v2/index/7th/sprite-img.png);
+    background-size: 1335px 1194px;
+    margin-left: 10px;
+    display:none;
+    vertical-align: -7px;
+  }
+  
+  .btn-top-bg:hover .icon-arrow {
+    display: inline-block;
+    animation: arr-ani 2s infinite linear;
+  }
+  
+  @keyframes arr-ani {
+    0% {
+      transform: translateX(0);
+    }
+    10% {
+      transform: translateX(5px);
+    }
+    20% {
+      transform: translateX(0);
+    }
+    30% {
+      transform: translateX(5px);
+    }
+    40% {
+      transform: translateX(0);
+    }
+    55% {
+      transform: translateX(0);
+    }
+    65% {
+      transform: translateX(8px);
+    }
+    95% {
+      transform: translateX(8px);
+    }
+    0% {
+      transform: translateX(8px);
+    }
+  }
+  

@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+html{
+    font-size: 10px;
+
+}
+*,*:befor,*:after{
+    box-sizing: border-box;
+
+
+}
+body{
+    height: 100vh;/*占满整个屏幕*/
+    font-family: sans-serif;
+    background-color: #3bc1ac;
+     display: flex;
+    align-items: center;/*弹性布局中垂直居中 让子元素居中*/
+    justify-content: center; 
+
+}
+.voice_container{
+    width: 50rem;
+    background: #fff;
+    padding: 2rem;/*盒子跟里面的间距*/
+    border-radius: 1rem;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);/*当头照 偏移，偏移量，影子大小，影子颜色*/
+    z-index: 1;
+    overflow: hidden;
+
+
+}
+h1{
+    padding: 0.5rem;
+    background: #ffc600;
+    border-bottom: 5px solid #f3c00f;
+    text-align: center;
+    font-size: 5rem;
+    font-weight: 100;
+    font-family:'Pacifico', cursive;
+    text-shadow: 3px 3px 0 #f3c00f;
+}
+.voice_container input,
+.voice_container button,
+.voice_container select,
+.voice_container textarea{
+    width: 100%;
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    border: 0;
+    font-style: 2rem;
+    background: #f7f7f7;
+
+}
+textarea{
+    height: 20rem;
+}
+input[type="select"]{}
+.voice_container button{
+    background: #ffc600;
+    border:0;
+    font-style: 2rem;
+    width: 49%;
+    float: left;
+
+}
+.voice_container button:nth-of-type(1){/*子元素里botton相同类型中第几个*/
+    margin-right: 2%;
+
+}
+.voice_container button:active{/*按钮点击的时候*/
+    top: 2px;
+}

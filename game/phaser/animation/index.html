@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+    <script src="https://cdn.bootcss.com/phaser/2.6.2/phaser.min.js"></script>
+    <body>
+        <div id="game"></div>
+        <script>
+            // lib
+            // 业务
+            // Phaser矿架提供的类
+            // 实例化时执行的函数
+            var game=new Phaser.Game(800,600,Phaser.AUTO,'#game',{
+                preload:preload,
+                create:create,
+                update:update, 
+            });
+            function preload(){
+                // 背景
+                game.load.image('lazur','./thorn_lazur.png');
+                // 精灵
+                game.load.spritesheet('mummy','./metalslug_mummy37X45.png',37,45,18);
+
+            }
+
+            var back;//背景
+            var mummy;//精灵
+            var anim;
+            var loopText;
+            function create(){
+                back=game.add.image(0,-400,'lazur');
+                back.scale.set(2);
+                back.smoothed=false;
+                
+                mummy=game.add.sprite(200,360,'mummy',10);
+                mummy.scale.set(4);
+                mummy.smoothed=false;
+                
+                anim=mummy.animations.add('walk');
+                anim.onStart.add(animationStarted,this);//回调函数
+                anim.onStart.add(animationLooped,this);
+                anim.onStart.add(animationStopped,this);
+                anim.play(10,true);
+
+                
+            }
+
+
+
+            function animationStarted(sprite,animation){
+                game.add.text(32,32,'Animation started',{
+                    fill:'white'
+                })
+
+            }
+            function animationLooped(sprite,animation){
+                if(animation.loopCpunt===1){
+                    loopText=game.add.Text(32,64,'AnimationLooped'{
+                        fill:white
+                    });
+                }else{
+                    loopText=game.add.Text(32,64,'AnimationLooped*2'{
+                        fill:white
+                    });
+                    animation.loop=false;
+                }
+
+            }
+            function animationStopped(sprite,animation){
+
+            }
+            function update(){
+                if(anim.isPlaying){
+                    back.x-=1;
+                }
+                
+
+            }
+        </script>
+    </body>
+</html>

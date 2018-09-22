@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>audio</title>
+    <link rel="stylesheet" href="./css.css">
+</head>
+<body>
+    <div id="player">
+        <audio  id="baby" src="./sounds/Baby.mp3"></audio>
+    </div>
+</body>
+<script>
+    window.onload=function(){
+        
+            var player = document.getElementById("player");
+        player.addEventListener('click', playmusic);    
+        function playmusic(e) {
+            const audio = document.querySelector('#baby');
+            if (audio.paused) {
+                audio.play();
+                player.style.animationPlayState='running';
+            } else {
+                audio.pause();
+                player.style.animationPlayState='paused';
+            }
+
+        }
+
+
+
+
+    }
+ window.addEventListener('click', playSound);
+
+
+</script>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Box2D</title>
+  <script src="https://cdn.bootcss.com/phaser/2.6.2/phaser.min.js"></script>
+  <script src="http://examples.phaser.io/_site/phaser/phaser.2.2.2.box2d.min.js"></script>
+</head>
+<body>
+  <div id="game"></div>
+  <script>
+  var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'game', {
+    preload: preload,
+    create: create
+  });
+
+  function preload () {
+    game.load.image('block', './block.png');
+  }
+
+  function create () {
+    game.stage.backgroundColor = '#124184';
+    game.physics.startSystem(Phaser.Physics.BOX2D);
+    game.physics.box2d.setBoundsToWorld();
+    game.physics.box2d.gravity.y = 500;
+    for (var i = 0; i < 5; i++) {
+      var blockSprite = game.add.sprite(150 + i * 125, 300 - i * 50, 'block');
+      game.physics.box2d.enable(blockSprite); 
+      blockSprite.body.angle = 30;
+    }
+    game.input.onDown.add(mouseDragStart, this);
+    game.input.addMoveCallback(mouseDragMove, this);
+    game.input.onUp.add(mouseDragEnd, this);
+    game.add.text(5, 5, 'Drag the objects with the mouse.', {
+      fill: '#ffffff',
+      font: '14pt Arial'
+    });
+
+    function mouseDragStart() {
+      game.physics.box2d.mouseDragStart(game.input.mousePointer);
+    }
+    function mouseDragMove() {
+      game.physics.box2d.mouseDragMove(game.input.mousePointer);
+    }
+    function mouseDragEnd() {
+      game.physics.box2d.mouseDragEnd();
+    }
+  }
+  </script>
+</body>
+</html>
+
