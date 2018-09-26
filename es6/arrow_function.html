@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>arrow function</title>
+    <style>
+        .wrap{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+            font-weight: 100;
+            color: white;
+        }
+        .box{
+            width: 50px;
+            height: 50px;
+            padding: 50px;
+            background: black url(https://unsplash.it/1500/1500?image=560&blur=0.5) center fixed no-repeat;
+            transition: width .2s,height .2s;
+        }
+        .box.opening{
+            width: 500px;
+            height: 500px;
+
+        }
+        .box h2{
+        position:absolute;
+        width:100%;
+        font-size:100px;
+        top:0;
+        transform: translateX(-200%);
+        transition: all .5s;
+
+        }
+        .box p{
+            position: absolute;
+            width: 100%;
+            transform: translateX(200%);
+            transition: all .5s;
+            bottom: 0;
+        }
+        .box.open>* {
+            transform: translateX(0%);
+
+
+
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box">
+            <h2>Wes Bos</h2>
+            <p class="social">@wesbos</p>
+        </div>
+    </div>
+    <script>   
+    const box=document.querySelector('.box');
+    box.addEventListener('click',function(){
+        // this 指向box 事件发生时指向事件发生的元素
+        console.log(this);
+        let first='opening';
+        let second='open';
+        // box.classList.add('first');
+        // toggle
+        // toggle api
+        // 1.opening
+        // 2,opening open
+        // 3,opening
+        // 4,opening open
+        let that=this;
+        if(this.classList.contains(first)){
+            [first,second]=[second,first];
+        }
+        this.classList.toggle(first);
+        console.log(this);
+        setTimeout(()=>{
+            // 函数内部的函数，新的函数作用域
+            // this 指针 如果这个函数是普通函数，this指向window
+            //箭头函数中的this指向上级作用域
+            console.log(this);
+            this.classList.toggle(second);
+
+        },250);
+
+
+
+    })
+
+    // const num=1;
+    // const str='abc';
+    // const isOK=false;
+    // const a=undefined;
+    // const b=null;
+    //五中基本数据类型
+
+
+
+    //object 复杂数据类型
+    // 下标为字符串的，祖先都是object，prototype 链
+    // const obj={name:'刘强东'};
+    // const remark=['不知妻美','我倒美国是去学习的'];
+    // // 函数一等公民，是对象
+    // const funcA=function(){
+    //     console.log('help me!');
+        
+    // }
+    // console.log(typeof obj,typeof remark,typeof funcA);
+   // 单一功能
+//    function 对象
+//     ()=>{
+
+
+//     }
+        
+</script>
+    
+</body>
+</html>

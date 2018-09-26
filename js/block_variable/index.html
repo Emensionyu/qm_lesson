@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .box{
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        background: green;
+        line-height: 50px;
+        text-align: center;
+        font-size: 20px;
+        margin: 20px;
+
+    }
+    </style>
+
+</head>
+<!-- <script>
+    // var boxs=document.querySelectorAll('.box');
+    // boxs.forEach(function(box){
+    //     box.addEventListener('click',function(){
+    //         console.log(box.innerHTML);
+    //     })
+       
+    // })
+
+//addenentListener异步执行的方法，所在的函数作用域没有i到全局作用域寻找i已经为10
+//let会创建块级作用域 嵌套作用域 闭包 （10个块级作用域）
+     var boxs=document.querySelectorAll('div');
+            for(let i=0;i<boxs.length;i++){
+         //传参
+         (function(i){
+             //函数作用域
+              boxs[i].addEventListener('click',function(){alert(i);});
+              })(i);  
+     }
+    //  functionA(){
+    //      console.log(s[i].index+1);
+    //  }
+
+
+
+
+</script> -->
+<script>
+undefined = true; // 给其他代码挖了一个大坑！绝对不要这样做！ 
+ 
+ (function IIFE( undefined ) { 
+     var a;
+     if (a === undefined) {        
+     console.log( "Undefined is safe here!" );
+     } 
+ })();
+ </script>
+<body>
+   <div class="box">1</div>
+   <div class="box">2</div>
+   <div class="box">3</div>
+   <div class="box">4</div>
+   <div class="box">5</div>
+   <div class="box">6</div>
+   <div class="box">7</div>
+   <div class="box">8</div>
+   <div class="box">9</div>
+   <div class="box">10</div>
+   
+
+</body>
+</html>

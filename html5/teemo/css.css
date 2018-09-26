@@ -37,12 +37,12 @@
   .smoke {
     width: 50.5%;
     height: 37.7%;
-    top: 17.8%;
+    top: -10.8%;
     left: 36.3%;
     z-index: 10;
     background-image: url(http://lol.qq.com/act/a20161020teemo/_img/click/_smoke2.png);
     background-size: auto 100%;
-    animation: smokeAnimation 1.2s infinite steps(5);/*动画*/
+    /* animation: smokeAnimation 1.2s infinite steps(5);动画 */
   }
   
   .cauldron-container {
@@ -57,7 +57,7 @@
     width: 100%;
     height: 50%;
     left: 0;
-    bottom: 0;
+    top: 0;
     background-image: url(http://lol.qq.com/act/a20161020teemo/_img/click/cauldron.png);
     background-size: auto 100%;
   }
@@ -98,7 +98,7 @@
     }
   }
   
-  @keyframes smokeAnimation {
+  /* @keyframes smokeAnimation {
     0% {
       background-position: 0 0;
     }
@@ -108,5 +108,5 @@
     100% {
       background-position: 0%;
     }
-  }
+  } */
   

@@ -14,8 +14,7 @@ request('https://www.duitang.com/p/atlas/?id=99285025/',(err,req)=>{
         var body=req.body;
         console.log(body);
         // cheerio将内存中html模拟浏览器的方式渲染网页
-        var $=cheerio.load(body,{decodeEntities:false
-        });
+        var $=cheerio.load(body,{decodeEntities:false });
         //document.querySelector()
         $('.list.list_preferential').each((i,item)=>{
             // console.log(i,item);
