@@ -26,3 +26,4 @@ img{box-shadow:0 0 10px green;box-shadow: 0 0 10px 20px yellow}
 
 如果元素中的内容超出了给定的宽度和高度属性，overflow 属性可以确定是否显示滚动条等行为
 overflow hidden;
+- .voice_container button:nth-of-type(1){/*子元素里botton相同类型中第几个*/

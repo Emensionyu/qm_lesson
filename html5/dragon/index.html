@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>手淘年货节--解幕动画</title>
+
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    <!-- <script>
+       ( function(){
+           function setFontSize(){
+           const w=window.innerWidth/10;
+           const oHtml=document.documentElement;
+           oHtml.style.fontSize=w+'px';
+
+           }
+           setFontSize();
+       
+        window.onresize=function(){
+           setFontSize();
+        }
+
+        })();//自适应 立即执行函数，不污染命名空间
+        
+
+
+    
+    
+    </script> -->
+    <link rel="stylesheet" href="./css.css">
+    
+</head>
+<body>
+    <script src="./common.js" ></script>
+    <div class="row">
+        <!-- <div class="col-1"></div>
+        <div class="col-2"></div> -->
+        <div class="col-5"></div>
+        <div class="col-5"></div>
+        <!-- <div class="col-5"></div>
+        <div class="col-6"></div>
+        <div class="col-7"></div>
+        <div class="col-8"></div>
+        <div class="col-9"></div>
+        <div class="col-10"></div> -->
+    </div>
+    <div class="dragon-poplayer" id="dragon-poplayer">
+        <div class="dragon-selection dragon-ready-play"></div>
+        <div class="dragon-selection dragon-playing" id="dragon-playingg"></div>
+
+    </div>
+    <script>
+        const oRow =document.querySelector('.row');
+        console.log(oRow.childNodes);
+
+    
+    </script>
+    
+</body>
+</html>
