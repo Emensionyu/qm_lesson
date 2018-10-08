@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  ul, li {
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+  }
+  a:link {
+    color: #3377aa;
+  }
+  a:visited {
+    color: #666699;
+  }
+  .content {
+    width: 1040px;
+    margin: 0 auto;
+  }
+  .article {
+    width: 675px;
+    float: left;
+    height: 500px;
+    /* background-color: red; */
+  }
+  .aside {
+    width: 300px;
+    float: right;
+    height: 500px;
+    /* background-color: green; */
+  }
+  /* 重复的部分， ui组件 */
+  .hot-link , .rating_answer {
+    margin-bottom: 20px;
+    line-height: 1.5;
+    background: #f2f7f6;
+    border-radius: 4px;
+  }
+  .rating_answer {
+    padding: 12px 0 12px 18px;
+  }
+  .rating_answer ul {
+    font-size: 14px;
+    color: #cedcd9;
+  }
+  .rating_answer li {
+    font-size: 13px;
+  }
+  .ad {
+    height: 250px;
+    background-color: yellow;
+    margin-bottom: 20px;
+  }
+  .hot-link {
+    padding: 16px 0 16px 18px;
+  }
+  .hot-link h2 {
+    margin: 0;
+    padding: 0;
+    border: none;
+    color: #007722;
+    font-size: 16px;
+    
+  }
+  .hot-link ul {
+    font-size: 14px;
+    color: #cedcd9;
+  }
+  .hot-link li {
+    margin-top: 8px;
+    font-size: 13px;
+  }
+  .billboard-hd{
+    height: 39px;
+    padding: 7px 0px 3px 0px;
+    line-height: 1.5;
+    font-size: 26;
+    margin-bottom: 12px;
+    border-bottom: 1px;
+    border-bottom-color: #eeeeee;
+
+    
+
+  }
+  .billboard-hd>h2{
+    display: inline-block;
+    height: 39px;
+    background-color: #ffffff;
+   
+
+
+
+  }
+  .billboard-hd>span{
+    display: inline-block;
+    padding:2 0 0 13;
+    
+  }
+  /* .billboard-hd>span{
+    display: inline-block;
+    padding: 15px 0 10px 0;
+    font-size: 7;
+    color: #b5bbbd;
+   
+
+  } */
+  .order{
+   
+    width: 19px;
+
+  }
+  .title{
+    display: inline-block;
+
+  }
+   td{
+    padding:7px auto;
+     display: inline-block;
+     font-size: 14px;
+     line-height: 1.5;
+     border-bottom: 1px solid #eaeaea;
+    
+    
+  }
+  table{
+    border-collapse: collapse;
+  }
+  .screening{
+    display: block;
+
+  }
+  .screening-hd{
+    
+  }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <div class="article">
+      <div id="screening" class="s">
+        <div class="screening-hd">
+          <div class="ul-slide-control">
+            <div class="ul-slide-control_left"></div>
+            <div class="ul-slide-control_right"></div>
+          </div>
+          <div class="slide-tip">1/5</div>
+          <h2>
+            <div>
+              正在上映
+            </div>
+            <span>
+              全部正在上映>>
+            </span>
+            
+            <span>
+              即将上映>>
+            </span>
+          </h2>
+        </div>
+        <div class="screeing-bd"></div>
+
+      </div>
+      
+    </div>
+    <div class="aside">
+      <div class="rating_answer">
+        <ul>
+          <li>
+            <a href="#" target="_blank">豆瓣电影评分八问</a>
+          </li>
+        </ul>
+      </div>
+      <div class="ad">
+      </div>
+      <div class="hot-link">
+        <h2>电影活动&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+        <ul>
+          <li>
+            <a href="#" target="_blank">今晚我有空 |看完这电影想立马丢掉电脑！</a>
+          </li>
+          <li>
+              <a href="#" target="_blank">好莱坞电影工业深度探访交流</a>
+            </li>
+        </ul>
+      </div>
+      <div id="billboard" class="s">
+        <div class="billboard-hd">
+          <h2> 一周口碑榜</h2>
+          <span><a href="#">更多榜单</a></span>
+        </div>
+        <div class="billboard-bd"></div>
+      </div>
+      <div class="billboard-bd">
+        <table>
+          <tbody>
+              <tr>
+                  <td class="order">1</td>
+                  <td class="title">
+                    <a href="#" >幸福的拉扎罗</a>
+                  </td>
+                </tr>
+            <tr>
+              <td class="order">2</td>
+              <td class="title">
+                <a href="#" >江湖儿女</a>
+              </td>
+            </tr>
+            <tr>
+                <td class="order">3</td>
+                <td class="title">
+                  <a href="#" >冒牌上尉</a>
+                </td>
+              </tr>
+             
+                <tr>
+                    <td class="order">4</td>
+                    <td class="title">
+                      <a href="#" >解除好友2:暗网</a>
+                    </td>
+                  </tr>  
+                  <tr>
+                      <td class="order">4</td>
+                      <td class="title">
+                        <a href="#" >解除好友2:暗网</a>
+                      </td>
+                    </tr>       
+          </tbody>
+        </table>
+
+      </div>
+      
+    </div>
+  </div>
+</body>
+</html>
+

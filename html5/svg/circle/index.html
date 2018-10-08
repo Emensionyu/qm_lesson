@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>svg 矢量图做进度条</title>
+    <style>
+    html,body{
+
+
+        background-color:#2962ff;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+    }
+    .progress-ring__circle{
+        /* stroke-dasharray: 10 20;
+        stroke-dashoffset: 100; */
+        transform: rotate(-90dge);
+        transform-origin: 50%,50%;
+        transition: 0.35s stroke-dashoffset;
+    }
+    input{
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        width: 80px;
+        
+    }
+    
+    }
+    </style>
+</head>
+<body>
+    <svg class="progress-ring" height="120" width="120">
+        <circle class="progress-ring__circle" r="58" cx="60" cy="60" stroke-width="4" stroke="white" fill="transparent"/>
+        
+
+    </svg>
+    <input type="number" value="35" step="5" min="0" max="100">
+    <script>
+        var circle=document.querySelector('circle');
+        // console.log(Object.prototype.toString.call(circle));
+        var radius=circle.r.baseVal.value;
+        // console.log(radius);
+        var circumference=radius * 2 * Math.PI;
+        circle.style.strokeDasharray=`${circumference} ${circumference}`;//字符串模板符号
+        // circle.style.strokeDasharray=''+circumference+' '+circumference;
+        circle.style.strokeDashoffset=`100`;
+       
+      function  setProgress(percent){
+          const offset=circumference-percent/100*circumference;
+          circle.style.strokeDashoffset=offset;
+          //offset 是从右中开始的，而我们的习惯是从中上开始的
+
+
+      }
+
+       const input=document.querySelector('input');
+       setProgress(input.value);
+    input.addEventListener('change',function(){
+        setProgress(this.value);
+    })
+
+
+    
+    
+    
+    
+    </script>
+</body>
+</html>

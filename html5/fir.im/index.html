@@ -1,121 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <style>
-  * {
-    margin: 0;
-    padding: 0;
-  }
-  html,body{
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    html,
+    body {
       height: 100%;
-  }
-  body {
-    background: yellow;
-    overflow: hidden;
-  }
-  .plane-wrapper {
-    position: absolute;
-    top: 50%;
-    display: inline-block;
-    animation: undulate 2s linear infinite;
-    animation-direction: alternate;
-    perspective: 2500px;
-    transition: all .5s;
-  }
-  .section.animate-out .plane-wrapper {
-    /* 变速运行 */
-    animation: plane-out 1.3s ease-out forwards;
-  }
-
-  @keyframes plane-out {
-    0% {
-      transform: scale(1) translateX(0);
     }
-    30% {
-      transform: scale(.8) translateX(160px);
+    body {
+      background: yellow;
+      overflow: hidden;
+      min-width: 375px;
     }
-    100% {
-      transform: scale(1.2) translateX(-2000px);
+    .plane-wrapper {
+      position: absolute;
+      top: 50%;
+      display: inline-block;
+      animation: undulate 8s linear infinite alternate;
+      perspective: 2500px;
+      transition: all .5s;
     }
-  }
-
-  @keyframes undulate {
-    0%, 100%, 50% {
-      transform: translate3d(0, 0, 0);
+    /* .plane,
+    .propeller {
+      width: 100%;
+    } */
+    img {
+      max-width: 100%;
     }
-    25% {
-      transform: translate3d(-6px, -18px, 0);
+    .section.animate-out .plane-wrapper {
+      animation: plane-out 1.3s ease-out forwards;
     }
-    75% {
-      transform: translate(6px, 10px, 0);
+    .plane-wrapper .rotate-container {
+      position: absolute;
+      top: 51.7003%;
+      left: 13.1%;
+      display: inline-block;
+      width: 27.424%;
+      height: 14.4474%;
+      animation: rotating .2s linear infinite reverse;
     }
-  }
-  .plane-wrapper .rotate-container {
-    position: absolute;
-    /* 百分比是解决设备适配的一种方案 */
-    top: 51.7003%;
-    left: 13.1%;
-    display: inline-block;
-    width: 27.424%;
-    height: 14.4474%;
-    animation: rotating .2s linear infinite reverse;
-  }
-  @keyframes rotating {
-    0% {
-      /* 三个方向： Y 钢管舞  Z  X */
-      transform: rotate(0) rotateY(-20deg);
+    @keyframes rotating {
+      0% {
+        transform: rotate(0deg) rotateY(-20deg);
+      }
+      50% {
+        transform: rotate(180deg) rotateY(-20deg);
+      }
+      100% {
+        transform: rotate(360deg) rotateY(-20deg);
+      }
     }
-    50% {
-      transform: rotate(180deg) rotateY(-20deg);
+    @keyframes undulate {
+      0%,
+      100%,
+      50% {
+        transform: translate3d(0, 0, 0);
+      }
+      25% {
+        transform: translate3d(-6px, -18px, 0)
+      }
+      75% {
+        transform: translate3d(6px, 10px, 0)
+      }
     }
-    100% {
-      transform: rotate(360deg) rotateY(-20deg);
+    @keyframes plane-out {
+      0% {
+        transform: scale(1) translateX(0);
+      }
+      30% {
+        transform: scale(.8) translateX(160px);
+      }
+      100% {
+        transform: scale(1.2) translateX(-2000px);
+      }
     }
-
-  }
-
+    /* 响应式——媒体查询  使适配不同设备 */
+    @media (max-width: 769px) {
+      .plane-wrapper {
+        margin-top: -125px;
+        width: 375px;
+      }
+    }
+    @media (min-width: 770px) {
+      .plane-wrapper {
+        margin-top: -140px;
+        width: 520px;
+      }
+    }
+    @media (min-width: 1280px) {
+      .plane-wrapper {
+        margin-top: -170px;
+        width: 680px;
+      }
+    }
+    @media (min-width: 1366px) {
+      .plane-wrapper {
+        margin-top: -195px;
+        width: 780px;
+      }
+    }
+    @media (min-width: 1440px) {
+      .plane-wrapper {
+        margin-top: -200px;
+        width: 800px;
+      }
+    }
   </style>
 </head>
+
 <body>
-  <!-- 测试类的产品， App的升级可以在这里平稳运行 
-  1. 大气而简约 
-  飞机 
-  2. 官网，设备有可能是多种多样的
-  飞机可以随着设备的大小而改变
-  缩放 图片的大小还是不会变的， 200K 百分比
-  PC 会显示模糊
-  svg 图片 
-  不同设备图片处理问题
-  svg  矢量图， 不是由像素组成的， 
-  数学图形来构成的，  -->
-
-
+  <!-- 测试类的产品， App的升级可以在这里平稳运行
+  1. 大气而简约
+    飞机平稳运行
+  2. 官网， 设备有可能是多种多样
+    飞机可以随着设备的大小而改变
+    缩放 图片的大小还是不会变的， 200K 百分比
+    PC 会显示模糊
+    SVG 图片
+    不同设备图片处理问题
+    svg 矢量图， 不是由像素组成的
+    数学图形来构成的 -->
+  <!-- .section.section-1.ready -->
   <div class="section section-1 ready">
-    <div class="plane-wrapper" style="left:315.5px">
+    <!-- 买im域名 -->
+    <div class="plane-wrapper" style="left: auto;">
       <img src="http://fir.im/images/plane.svg" alt="" class="plane">
       <div class="rotate-container">
         <img src="http://fir.im/images/propeller.svg" alt="" class="propeller">
       </div>
     </div>
   </div>
+
   <script>
-  
-  // 事件监听 兼容性的  IE和CHROME的标准不太一样
-  const section = document.querySelector('.section');
-  document.body.onmousewheel = function(event) {
-    // IE9 以下
-  };
-  document.body.addEventListener('mousewheel', function(event) {
-    // 现代浏览器
-    // 飞出去？ 
-    section.classList.remove('ready');
-    section.classList.add('animate-out');
-  });
+    // 获取网页窗口宽度
+    let screenWidth = document.body.clientWidth
+    let planeWrapper = document.querySelector('.plane-wrapper')
+    // 设置非移动端的设备（屏幕较大）时的初始left偏移，让飞机居中显示
+    if (screenWidth > 770) {
+      planeWrapper.style.left = 315.5 + 'px'
+    }
+    window.onresize = function () {
+      screenWidth = document.body.clientWidth
+      planeWrapper = document.querySelector('.plane-wrapper')
+      // 设置left的值为 (网页宽度-飞机盒子宽度)/2
+      let left = (screenWidth - planeWrapper.clientWidth) / 2
+      planeWrapper.style.left = left + 'px'
+      let section = document.querySelector('.section')
+      // 兼容IE8以下
+      document.body.onmousewheel = function (event) {
+        event = event || window.event
+        section.classList.remove('ready')
+        section.classList.add('animate-out')
+      }
+      document.body.addEventListener('mousewheel', function (event) {
+        event = event || window.event
+        section.classList.remove('ready')
+        section.classList.add('animate-out')
+      })
+    }
   </script>
 </body>
+
 </html>
 

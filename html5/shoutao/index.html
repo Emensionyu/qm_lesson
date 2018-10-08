@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="salary"/>
+     <script>
+         const sallaryInput=document.getElementById('salary');
+         sallaryInput.addEventListener('change',function(){
+             let salary=Number(this.value);
+             console.log(salary,typeof salary);
+             //输入框里的哪怕是数字，类型是sring
+             //运算时做了自动类型转换，隐式类型转换
+             alert(salary*(12+2.5));
+
+         });
+        //  salary 多少？工资，绩效=2.5\
+        //考虑代码的严谨性
+
+
+        /*
+        *功能：计算全年工资
+        *@params salary number
+        *@params level default C，in  ABCD
+        *@return number
+        *
+        */
+    //    var newsalary=function(salary,jixiao){
+    //        return salary*(12+jixiao);
+       
+        var totalSalary=function(salary,level='C'){
+           
+            // if(level!='A'||level!='B'||level!='C'||level!='D'){
+            //     throw new Error('请选择绩效等级');
+            // }
+
+            // if(level.length==1&&'ABCD'.indexOf(level)>=0){
+
+            // }
+            // if('ABCD'.indexOf(level)<0){
+            //     throw new Error();
+            // }
+            // if(typeof gongzi!=='number'&&gongzi<=0){
+            //     throw new Error();
+
+            // }
+            console.log(arguments);
+            
+            if(arguments.length==0){
+                throw new Error('请输入工资');
+            }
+            salary=Number(salary);
+            if(salary<=0){
+                throw new Error('工资输入错误，请检查')
+            }
+            if ('ABCD'.indexOf(level) < 0) {
+             throw new Error('请选择绩效等级');
+          }
+
+
+            if(arguments.length>2&&arguments[2]==='admin'){
+                return salary*(120+performanceA());
+            }
+            if(level==='A'){
+
+                return performanceA(salary);
+
+            }
+            if(level==='B'){
+                return performanceB(salary)
+
+            }
+            if(level==='C'){
+                return PerformanceC(salary);
+
+            }
+            if(level==='D'){
+                return performanceD(salary);
+
+            }
+            console.log(totalSalary('15420','A'));
+        //    let gongzi=prompt('请输入用户的工资');
+        //    console.log(gongzi);
+        //    let totalsalary=gongzi*(12+2.5);
+        //    console.log(totalsalary);
+
+
+
+
+
+            // switch(dengji){
+            // case A:salary=10;
+            // break;
+            // case B:salary=20;
+            // break;
+            // default:break;
+
+            // }
+           
+
+
+        }
+         function performanceA(){
+             return sallary*18;
+         }
+         function performanceB(){
+             return salary*16;
+         }
+         function performanceC(){
+             return salary*14.5;
+         }
+         function performanceD(){
+             return salary*12;
+         }
+         console.log(totalSalary('15420','A'));
+        
+    </script>   
+</body>
+</html>

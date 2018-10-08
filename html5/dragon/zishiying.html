@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> 自适应test</title>
+    <style>
+        html,body{
+            height: 100vh;
+            min-width: 10rem;
+            margin-left: auto;
+            margin-right: auto;
+            background: transparent;
+        }
+        .cow{
+            width: 100%;
+           font-size: 0;
+           height: 100vh;
+            
+        }
+        .col{
+
+            height: 100%;
+
+            display: inline-block;
+            width: 2rem;
+            background-color: blue;
+           
+        }
+        .cow>div:nth-child(odd){
+            background-color: green;
+
+        }
+    
+    
+    
+    
+    </style>
+    <script>
+       ( function(){
+            function setFontSize(){
+            const OHtml=document.documentElement;
+            const w=window.innerWidth/10;
+            OHtml.style.fontSize=w+'px';//赋值
+
+        }
+        setFontSize();
+        window.onresize=function(){
+            setFontSize();
+        }
+       
+
+        })();
+       
+    
+    
+    
+    
+    </script>
+    
+</head>
+<body>
+    <div class="cow">
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+    </div>
+    
+</body>
+</html>

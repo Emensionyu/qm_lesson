@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>WEUI 文件上传</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="container" id="container">
+    <div class="page uploader">
+      <div class="page__hd">
+        <h1 class="page__title">Uploader</h1>
+        <p class="page__desc">上传组件，一般配合<a class="link" href="#">组件Gallery</a>来使用。</p>
+      </div>
+      <div class="page__bd">
+        <div class="weui-cells weui-cells_form">
+          <div class="weui-cell">
+            <div class="weui-cell__bd">
+              <div class="weui-uploader">
+                <div class="weui-uploader__hd">
+                  <p class="weui-uploader__title">图片上传</p>
+                  <div class="weui-uploader__info">3/9</div>
+                </div>
+                <div class="weui-uploader__bd">
+                  <ul class="weui-uploader__files" id="uploaderFiles">
+                    <li class="weui-uploader__file" style="background-image:url(./images/pic_160.png)"></li>
+                    <li class="weui-uploader__file" style="background-image:url(./images/pic_160.png)"></li>
+                    <li class="weui-uploader__file" style="background-image:url(./images/pic_160.png)"></li>
+                    <li class="weui-uploader__file weui-uploader__file_error" style="background-image:url(./images/pic_160.png)"></li>
+                    <li class="weui-uploader__file weui-uploader__file_status" style="background-image:url(./images/pic_160.png)">
+                      <!-- 层次深度3-4层 -->
+                      <div class="weui-uploader__file-content">50%</div>
+                    </li>
+                  </ul>
+                  <div class="weui-uploader__input-box">
+                    <!-- +装饰，css -->
+                    <input type="file" id="uploaderInput" class="weui-uploader__input" accept="image/*" multiple />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page__ft">
+        <a href="#">
+          <img src="https://weui.io/images/icon_footer_link.png" alt="">
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

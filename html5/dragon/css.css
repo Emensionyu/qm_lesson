@@ -25,13 +25,13 @@
   .col-1 {
     width: 1rem;
   }
-  .col-1, .col-2, .col-8, .col-5 {
+  .col-1,.col-2,.col-8,.col-5 {
     height: 100%;
     display: inline-block;
     background-color: green;
   }
   .col-5 {
-    width: 5rem;
+    width: 4rem;
   }
   .col-2 {
     width: 2rem;
@@ -40,6 +40,20 @@
     width: 8rem;
   }
   .row > div:nth-child(odd) {
+    width: 3rem;
     background-color: yellow;
   } 
-  
+  .cum-1{
+    width: 100%;
+    height: 50%;
+    background-color: blueviolet;
+  }
+  .cum-1:nth-child(1){
+    background-color: #fff;
+  }
+  .col-5:nth-child(2)>div:nth-child(1){
+    background-color: red;
+  }
+  .col-5:nth-child(2)>div:nth-child(2){
+    background-color:blue;
+  }
