@@ -24,7 +24,10 @@ Array.prototype.forEach = function(fn) {
   // 调用的方式
   arr.forEach(function(i, index) {
     // arguments
-    console.log(arguments[1] == index);
+    console.log(arguments[0]);
+    console.log(arguments[1]);
+    // console.log(arguments[2]);
+    // console.log(arguments[1] == index);
     console.log(`第${index}遍历值为${i}`);  
   })
   
