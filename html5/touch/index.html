@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Alloy Finger</title>
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  html, body {
+    bottom: 0;
+    background-color: #cccccc;
+    text-align: center;
+    font: 14px / 1.5 "Microsoft Yahei" sans-serif;
+  }
+  .ribbon {
+    top: 3.2em;
+    right: -3.7em;
+    color: #ffffff;
+    display: block;
+    padding: 0.6em 3.5em;
+    position: fixed;
+    text-align: center;
+    text-decoration: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    background-color: green;
+    z-index: 10000;
+    transform: rotate(45deg);
+  }
+  .title {
+    height: 30px;
+    color: #333333;
+    font-size: 20px;
+    line-height: 30;
+  }
+  .imgBox{
+    margin-bottom: 10px;
+    border-bottom: 1px solid #333333;
+  }
+  .example img {
+    width: 160px;
+  }
+  </style>
+</head>
+<body>
+  <a href="https://github.com/AlloyTeam/AlloyFinger" class="ribbon">Fork me on Github</a>
+  <div class="example">
+    <div class="title">pinch</div>
+    <div class="imgBox">
+      <img src="http://alloyteam.github.io/AlloyFinger/asset/test.png" alt="" id="pinchImg">
+    </div>
+  </div>
+  <script src="http://alloyteam.github.io/AlloyFinger/asset/transform.js"></script>
+  <script src="http://alloyteam.github.io/AlloyFinger/alloy_finger.js"></script>
+  <script src="http://alloyteam.github.io/AlloyFinger/asset/to.js"></script>
+
+
+  <script>
+      const ppinchImg=document.getElementById("'pinchImg");
+      transform(pinchImg);//变形tup
+      let initScale=1;
+      new AlloyFinger(pinchImg,{
+          pinch:function(evt){
+              pinchImg.scaleX=pinchImg.scaleY=initScale*evt.zoom;
+
+          },
+          multipointStsrt:function(){
+              initStart=pinchImg.scaleX;
+
+          }
+      })  
+  
+  
+  </script>
+</body>
+</html>
+
