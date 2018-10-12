@@ -1,0 +1,13 @@
+/*每个页面都默认page
+*全局样式
+页面样式
+*/
+@import "styles/reset.wxss";
+@import "styles/hero.wxss";
+
+page {
+    background: #f8f8f8;
+}
+.section{
+    height: 100vh;
+}

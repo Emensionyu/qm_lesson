@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Alloy Finger</title>
   <style>
@@ -53,31 +53,53 @@
   <div class="example">
     <div class="title">pinch</div>
     <div class="imgBox">
-      <img src="http://alloyteam.github.io/AlloyFinger/asset/test.png" alt="" id="pinchImg">
+      <img src="https://alloyteam.github.io/AlloyFinger/asset/test.png" alt="" id="pinchImg">
+    </div>
+    <div class="title">rotate</div>
+    <div class="imgBox">
+      <img src="https://alloyteam.github.io/AlloyFinger/asset/test.png" alt="" id="rotateImg">
+    </div>
+    <div class="imgBox">
+      <img src="https://alloyteam.github.io/AlloyFinger/asset/test.png" alt="" id="pinchRoateImg">
     </div>
   </div>
-  <script src="http://alloyteam.github.io/AlloyFinger/asset/transform.js"></script>
-  <script src="http://alloyteam.github.io/AlloyFinger/alloy_finger.js"></script>
-  <script src="http://alloyteam.github.io/AlloyFinger/asset/to.js"></script>
-
-
+  <script src="https://alloyteam.github.io/AlloyFinger/asset/transform.js"></script>
+  <script src="https://alloyteam.github.io/AlloyFinger/alloy_finger.js"></script>
+  <script src="https://alloyteam.github.io/AlloyFinger/asset/to.js"></script>
   <script>
-      const ppinchImg=document.getElementById("'pinchImg");
-      transform(pinchImg);//变形tup
-      let initScale=1;
-      new AlloyFinger(pinchImg,{
-          pinch:function(evt){
-              pinchImg.scaleX=pinchImg.scaleY=initScale*evt.zoom;
-
-          },
-          multipointStsrt:function(){
-              initStart=pinchImg.scaleX;
-
-          }
-      })  
-  
-  
+  const pinchImg = document.getElementById('pinchImg');
+  Transform(pinchImg);  //变形这张图片
+  let initScale = 1;
+  new AlloyFinger(pinchImg, {
+    pinch: function(evt) {
+      pinchImg.scaleX = pinchImg.scaleY = initScale * evt.zoom;
+    },
+    multipointStart: function() {
+      initStart =  pinchImg.scaleX
+    }
+  })
+  const rotateImg = document.getElementById('rotateImg');
+  Transform(pinchImg);
+  new AlloyFinger(rotateImg, {
+    rotate: function(evt) {
+      rotateImg.rotateZ += evt.angle;
+    }
+  });
+  const pinchRotateImg = document.getElementById('pinchRotateImg');
+  Transform(pinchRotateImg)
+  new AlloyFinger(pinchRotateImg, {
+    rotate: function(evt) {
+      pinchRotateImg.rotateZ += evt.angle
+    },
+    multipointStart: function() {
+      initScale = pinchRotateImg.scaleX;
+    },
+    pinch: function(evt) {
+      pinchRotateImg.scaleX = pinchRotateImg.scaleY = initScale * evt.zoom;
+    }
+  })
   </script>
 </body>
 </html>
+
 

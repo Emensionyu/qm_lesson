@@ -1,0 +1,3 @@
+.hero image, .hero video{
+    height: 38.2vh;
+}

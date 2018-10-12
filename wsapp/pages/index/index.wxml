@@ -1,0 +1,12 @@
+<!--小程序提供快捷组件, 前端开发造房子  小程序 酒店-->
+<swiper class="section hero white" indicator-dots="{{true}}">
+  <swiper-item>
+    <image mode="aspectFill" src="https://resources.ninghao.net/landrover/discover-1.jpg" />
+  </swiper-item>
+  <swiper-item>
+    <image mode="aspectFill" src="https://resources.ninghao.net/landrover/velar-1.jpg" />
+  </swiper-item>
+  <swiper-item>
+    <image mode="aspectFill" src="https://resources.ninghao.net/landrover/discovery-sport-1.jpg" />
+  </swiper-item>
+</swiper>

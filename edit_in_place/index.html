@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="titleClassical">
+  </div>
+  <script>
+  function EditInPlaceField(id, parent, value) {
+    this.id = id;
+    this.value = value || 'default value';
+    this.parentElement = parent;
+    this.createElement();
+  }
+  EditInPlaceField.prototype.createElement = function() {
+    this.containerElement = document.createElement('div');
+    this.parentElement.appendChild(this.containerElement);
+
+    // span innerHTML this.value 挂到containerElement
+    this.staticElement = document.createElement('span');
+    this.containerElement.appendChild(this.staticElement);
+    this.staticElement.innerHTML = this.value;
+
+    this.fieldElement = document.createElement('input');
+    this.fieldElement.type = 'text';
+    this.fieldElement.value = this.value;
+    this.containerElement.appendChild(this.fieldElement);
+    
+    this.saveButton = document.createElement('input');
+    this.saveButton.type = 'button';
+    this.saveButton.value = 'save';
+    this.containerElement.appendChild(this.saveButton);
+
+    this.cancelButton = document.createElement('input');
+    this.cancelButton.type = 'button';
+    this.cancelButton.value = 'cancel';
+    this.containerElement.appendChild(this.cancelButton);
+
+    this.convertToText();
+    this.attachEvent();
+  }
+  EditInPlaceField.prototype.attachEvent = function() {
+    var that = this;
+    this.staticElement.addEventListener('click', function() {
+      that.convertToEditable();
+    });
+    this.cancelButton.addEventListener('click', function() {
+      that.convertToText();
+    });
+    this.saveButton.addEventListener('click', function() {
+     
+      var value = that.fieldElement.value;
+      that.value = value;
+      
+    
+      that.convertToText();
+    })
+  }
+
+  EditInPlaceField.prototype.convertToEditable = function() {
+    this.fieldElement.style.display = 'inline';
+    this.fieldElement.value = this.value;
+    this.saveButton.style.display = 'inline';
+    this.cancelButton.style.display = 'inline';
+    this.staticElement.style.display = 'none';
+  }
+
+  EditInPlaceField.prototype.convertToText = function () {
+    this.fieldElement.style.display = 'none';
+    this.saveButton.style.display = 'none';
+    this.cancelButton.style.display = 'none';
+    this.staticElement.style.display = 'block';
+    this.staticElement.innerHTML = this.value;
+  }
+  var titleClassical = new EditInPlaceField('titleClassical', document.body, 'Title Here');
+  </script>
+</body>
+</html>
