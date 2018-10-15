@@ -1,0 +1,19 @@
+{
+  "name": "weather",
+  "version": "1.0.0",
+  "description": "compile\r   stylus \r   写的代码跟运行的代码是两码事\r   js\r   babel 让我们的js可以使用最新的技术编写，\r   es8 acync await",
+  "main": "es6.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.26.3"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-preset-env": "^1.7.0"
+  }
+}
