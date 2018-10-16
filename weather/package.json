@@ -9,11 +9,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "babel-core": "^6.26.3"
-  },
+ 
   "devDependencies": {
-    "babel": "^6.23.0",
-    "babel-preset-env": "^1.7.0"
+    "babel": "^6.23.0" 
   }
 }
