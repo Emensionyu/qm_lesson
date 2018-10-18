@@ -1,0 +1,45 @@
+<view class="container">
+  <view class="userinfo">
+    <!-- 没有登录前, 拿不到用户信息
+    if   else -->
+    <button size="mini" wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+      登录
+    </button>
+    <block wx:else>
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover" />
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="titleBar">
+    <view class="status">
+      <text class="{{status=='1'?'active':''}}" bindtap="showStatus" data-status="1">全部</text>
+      <!-- //标签的数据属性 -->
+      <text class="{{status=='2'?'active':''}}" bindtap="showStatus" data-status="2"> 未完成</text>
+      <text class="{{status=='3'?'active':''}}" bindtap="showStatus" data-status="3">已完成</text>
+    </view>
+    <view class="add">
+      <button class="min-btn" type="warn" size="mini" bindtap="addTodoShow">+添加</button>
+    </view>
+  </view>
+  <scroll-view scroll-y class="lists">
+    <block wx:if="{{curLists.length<1}}">
+      <view class="nodata">
+        暂无数据
+      </view>
+    </block>
+    <!-- <block wx:if="{{curLists.length<1}}">
+      <view class="nodata" wx:for="{{curLists}}">
+        
+      </view> -->
+      <view class="item" wx:for="{{curLists}}" wx:key="index">
+        <view class="content">
+          <icon class="icon-small" type="{{item.status=='0'?'circle':'success'}}" 
+          size="23" data-item="{{index}}" bindtap="changTodo"></icon>
+          <text class="title">{{item.text}}</text>
+        </view>
+        
+        
+      </view>
+    
+  </scroll-view>
+</view>

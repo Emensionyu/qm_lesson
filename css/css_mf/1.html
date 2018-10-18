@@ -25,7 +25,7 @@
         }
         .right{
             opacity: .5;
-            /* float: left; */
+            float: right;
             background: #ef6be2;
             width: 400px;
             min-height: 100px;
@@ -34,28 +34,41 @@
     .BFC{
         overflow: hidden;
     }
+    .div1{
+        box-sizing: border-box;
+        width: 30px;
+        height: 30px;
+        background-color: pink;
+        padding: 10px;
+        margin: 10px;
+    }
+    .div2{
+        width: 30px;
+        height: 30px;background-color: pink;
+    }
     
     
     </style>
 </head>
 <body>
     <!-- //清楚浮动两种方法 -->
+    
     <div class="container" style="">
         <div class="left"></div>
         <div class="left"></div>
-        <div style="clear: both;"></div>
+        <div style="clear:both">eeeeeeeeeeeeeeeeeeee</div>
     </div>
-    fjfjjfjfjjfjfjfjjfj
-    ssssssssssssssss
-    ssssssssssssssssssssssssssssss
-    ssssssssssssssssssssssssssssss
-    ssssssssssssssssssssssss
     <div class="box BFC">
         <div class="left"></div>
         <div class="right"></div>
-
+    </div>
+    <div class="div1">
 
     </div>
+    <div class="div2">
+
+        </div>
+    
     
 </body>
 </html>

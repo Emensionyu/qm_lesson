@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:sans-serif;
+}
+html,body{
+    height: 100%;
+
+}
+.html_content{
+    height: 100%;
+}
+.item-section{
+    background-color: red;
+    position: relative;
+    min-height: 100%;
+    /*//至少高度为父元素的100% */
+
+}
+.item-section_header img{
+    width: 10rem;
+
+}
+ul li{
+    list-style: none;
+
+}
+.item-section ul{
+    padding: 0.133333rem;
+
+}
+.flag{
+    display: table;
+    width: 100%;
+    margin-bottom: 1px;
+    background: #fff;
+
+
+}
+.flag .flag-item{
+    display: table-cell;
+    padding: 0.16rem 0;
+    vertical-align: top;
+    background-color: #fff;
+
+
+
+
+}
+.flag .flag-item.figure{
+    width:2.34667rem;
+    height: 2.34667rem;
+   
+   
+
+}
+
+.flag .flag-item.figure img{
+    max-width: 100%;
+   
+}
+.flag .figcaption.flag-item{
+    padding-left: .2rem;
+    padding-right: .2rem;
+    /* margin-left: 0.21333rem; */
+    position: relative;
+}
+.flag .flag-title a{
+    color:#333;
+    line-height: 1.25;
+}
+.flag .flag-item{
+    display: table-cell;
+    padding: .16rem 0;
+    vertical-align: top;
+    background-color: #ffffff;
+
+}
+.flag-price{
+    display: inline-block;
+    padding: 0.15rem  0 0.1rem;
+}
+.flag-price span{
+    background-color: #f32a4c;
+    color:#fff;
+    vertical-align: middle;
+    padding: .026667rem .08rem .013333rem;
+    font-weight: 700;
+    margin-right: .066667rem;
+    font-size: 11px;
+}
+.flag-price strong{
+    vertical-align: middle;
+    color: red;
+    font-size: 16px;
+}
+.flag-price small{
+    vertical-align: middle;
+    color:red;
+    font-size:14px;
+}
+.flag-type{
+    font-size:12px;
+    color: #ff6a30;
+}
+.flag .flag-btn{
+    position: absolute;
+    bottom: .133333rem;
+    right: .2rem;
+    background-color: #f5294c;
+    color:#fff;
+    text-align: center;
+    width: 2.3rem;
+    height: .64rem;
+    font-size:14px;
+    line-height: .64rem;
+
+    
+}

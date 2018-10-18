@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script> -->
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+            const eleUsername = document.querySelector('.username');
+            const eleMotto = document.querySelector('.motto');
+            let xhr = null;//异步js 主动拉取的核心对象 Ajax
+            // 浏览器嗅探 
+            if(window.XMLHttpRequest){
+                xhr = new XMLHttpRequest();
+            }else{
+                //老old browser
+                xhr = new ActiveXObject('Microsoft.XMLHTTP');
+            }
+            // 从页面打开一个去后端的通道
+            // 主动拉
+            xhr.open('get','/dream.json',true);
+            xhr.send();
+            xhr.onreadystatechange = function(){
+                console.log(xhr.status);
+                if(xhr.readyState === 4&&xhr.status === 200){
+                        console.log(xhr.responseText);
+                        const dream = JSON.parse(xhr.responseText);
+                        eleUsername.innerHTML = dream.username;
+                        eleMotto.innerHTML = dream.motto;
+                }
+            }
+        });
+        // $(function(){
+        //     // $('.username').html('赢吧');
+        //     $.getJSON('/dream.json',function(data){
+        //         console.log(data);
+        //         $('.username').html(data.username);
+        //         $('.motto').html(data.motto);
+        //     })
+        // });
+            // 阻塞型的
+            // const eleUsername = document.querySelector('usernam');
+        //  domReady 比 window.onload 早一些    
+        // $(function(){
+        //     const eleUsername = document.querySelector('.usernam');
+        //     console.log(eleUsername);
+        // })    
+
+        // document.addEventListener('DOMContentLoaded',function(){
+        //     console.log('a');
+        // });
+        // window.onload = function(){
+        //     console.log('b');
+        // }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <div class="username"> </div>
+        <div class="motto"></div>
+    </div>
+
+</body>
+</html>

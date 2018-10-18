@@ -74,7 +74,7 @@
   .container{
       width: 970px;
       background: blue;
-      opacity: 0.5;   /*半透明*/
+      opacity: 0.1;   /*半透明*/
   }
   .col-md-1,.col-md-2,.col-md-3,
   .col-md-4,.col-md-5,.col-md-6,

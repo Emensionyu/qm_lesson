@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+}
+.container{
+    margin-left: auto;
+  margin-right: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+    height: 300px;
+}
+.col-md{
+    height: 300px;
+    background-color:green;
+}
+.row>div:nth-child(odd){
+    background-color:yellow;
+}
+.all-event-list [class*=col-md]{
+    padding-left: 15px;
+    padding-right: 15px;
+
+
+}
+@media(min-width:992px){
+    .container{
+        width: 970px;
+        background: blue;
+        opacity: 0.5;   /*半透明*/
+    }
+    .col-md{
+        float:left; /*用浮动离开文档流*/
+    
+    }
+  
+    .col-md{
+        width: 25%;  /* 没限制一个宽度，颜色叠加*/
+    }
+  }
+@media(min-width:1200px){
+    .container{
+        
+        background-color: red;
+        width: 1140px;
+    }
+
+}
