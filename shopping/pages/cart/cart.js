@@ -28,11 +28,16 @@ Page({
   getTotalPrice() {
     let carts = this.data.carts
     let total = 0
-    carts.forEach((item, index) => {
-      if(item.selected) {
-        total += item.price * item.num
+    // carts.forEach((item, index) => {
+    //   if(item.selected) {
+    //     total += item.price * item.num
+    //   }
+    // })
+    for(const cart of carts){
+      if(cart.selected){
+        total+=cart.price*carts.num
       }
-    })
+    }
     this.setData({
       totalPrice: total.toFixed(2)
     })
@@ -115,7 +120,7 @@ Page({
             title: 'iphone MX',
             image: '/image/s5.png',
             num: 1,
-            price: 867,
+            price: 1.5,
             selected: true
           },
           {
@@ -123,7 +128,7 @@ Page({
             title: 'ipad',
             image: '/image/s6.png',
             num: 1,
-            price: 450,
+            price: 2,
             selected: true
           },
           {

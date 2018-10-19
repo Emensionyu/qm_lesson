@@ -14,7 +14,7 @@
           <text class="cart-count-num">{{item.num}}</text>
           <text class="cart-count-add" bindtap="addCount" data-index="{{index}}">+</text>
         </view>
-        <text class="cart-del" bindtap="deleteList" data-index="{{index}}">x</text>
+        <text class="cart-del" bindtap="deleteList" data-index="{{index}}">删除</text>
       </view>
     </view>
     <view class="cart-footer">

@@ -1,0 +1,7 @@
+<!--components/icon/index.wxml-->
+<text class="iconfont icon-{{type}}" style="color:{{color}},bbckground:{{color2}}" ></text>
+
+
+<!-- <icon type="add"/> -->
+<!-- pros自定义属性attributes -->
+<!-- 调用形式 -->
