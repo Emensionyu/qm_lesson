@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>边框0.5像素解决方案</title>
+    <style>
+        select{
+            -webkit-appearance: button;
+        }
+        input{
+            -webkit-appearance:none;
+            outline: none;
+            /* 没有高亮 没有外观 */
+            border: none;
+            background-color: transparent;
+            
+
+        }
+        .btn{
+            position: absolute;
+            width: 100px;
+            display: block;
+            color: azure;
+            background-color: green;
+            font-size: 18px;
+            line-height: 2.6666;
+            border-radius: 15px;
+            text-align: center;
+            /* 1px=>.5px? iphone */
+            /* border: 10px solid #ccc; */
+           
+
+            
+
+        }
+        .btn:active{
+            background-color: rgba(0,255,0,.6);
+        }
+        .btn:after{
+            content: "";
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            border-radius: 30px;
+            top: 0;
+            left: 0;
+            border: 10px solid rgba(0, 0, 0, 0.2);
+            transform: scale(0.5);
+            transform-origin: 0 0;
+            box-sizing: border-box;
+        }
+        
+       
+    
+    </style>
+</head>
+<body>
+    <a href="#" class="btn">primary</a>
+    <!-- <input type="text">
+    <select name="" id="">
+        <option value="0"> 请选择</option> 
+        <option value="1"> 男</option> 
+        <option value="2"> 女</option>  
+    </select> -->
+</body>
+</html>
