@@ -1,0 +1,62 @@
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  line-height: 1.6;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+a img {
+  border: 0;
+}
+a {
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.weui-btn {
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 14px;
+  padding-right: 14px;
+  box-sizing: border-box;
+  line-height: 2.5556;
+  font-size: 18px;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  overflow: hidden;
+}
+.weui-btn_inline {
+  display: inline;
+}
+.weui-btn_primary {
+  background-color: #1aad19;
+}
+button,
+input,
+.weui-btn {
+  width: 100%;
+  border-width: 0;
+  outline: 0;
+  -webkit-appearance: none;
+}
+button:focus,
+input:focus,
+.weui-btn:focus {
+  outline: 0;
+}
+.weui-btn_inline,
+.weui-btn_mini {
+  width: auto;
+}
+.weui-btn_plain-primary,
+.weui-btn_plain-default {
+  border-width: 1px;
+  background-color: transparent;
+}
