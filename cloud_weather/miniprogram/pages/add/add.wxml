@@ -1,0 +1,4 @@
+<!--miniprogram/pages/add/add.wxml-->
+<van-button square type="primary" block bind:click="addData">
+新增数据
+</van-button>
