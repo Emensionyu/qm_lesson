@@ -1,0 +1,3 @@
+<view  wx:for="{{book_list}}" wx:key="index">
+
+</view>
