@@ -1,0 +1,18 @@
+{
+  "cloud": true,
+  "pages": [
+    "pages/index/index",
+    "pages/add/add",
+    
+    "pages/userConsole/userConsole",
+    "pages/storageConsole/storageConsole"
+   
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTextStyle": "black"
+  }
+}
