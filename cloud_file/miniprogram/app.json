@@ -3,10 +3,8 @@
   "pages": [
     "pages/index/index",
     "pages/add/add",
-    
-    "pages/userConsole/userConsole",
-    "pages/storageConsole/storageConsole"
-   
+    "pages/user/user",
+    "pages/photo/photo"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
