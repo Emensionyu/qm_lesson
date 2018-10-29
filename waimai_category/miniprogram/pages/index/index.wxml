@@ -1,0 +1,34 @@
+<view class="main">
+  <view class="category-left">
+    <view class="cate-list {{curIndex === index ?'on': ''}}" wx:for="{{category}}"
+    wx:key="index"
+    data-id="{{item.id}}" data-index="{{index}}"
+    bindtap="switchTab" 
+    >{{item.name}}
+    </view>
+  </view>
+  <scroll-view class="category-right" scroll-y="{{isScroll}}" 
+  scroll-with-animation="true" 
+  scroll-into-view="{{toView}}">
+    <block wx:for="{{detail}}" wx:for-item="item" wx:key="index">
+      <view class="cate-box" id="{{item.id}}">
+        <view class="cate-banner">
+          <image src="{{item.banner}}"/>
+        </view>
+        <view class="cate-title">
+          <text>{{item.cate}}</text>
+        </view>
+        <view class="product">
+          <view class="product-list" wx:for="{{item.detail}}" wx:key="index" wx:for-item="val">
+            <image src="{{val.thumb}}"/>
+            <view class="classname">
+              <text>{{val.name}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      
+      
+    </block>    
+  </scroll-view>
+</view>
