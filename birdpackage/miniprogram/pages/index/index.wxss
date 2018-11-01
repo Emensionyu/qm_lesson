@@ -1,0 +1,235 @@
+page,.main{
+  height: 100%;
+
+}
+.container{
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+.search-container {
+  height: 60rpx;
+  width: 70%;
+  position: relative;
+  left: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:rgba(243, 243, 243,0.8);
+  color: #FFF;
+  /* height: 80rpx; */
+  padding: 5rpx 10rpx;
+  z-index: 100;
+  /* margin-bottom: 50rpx; */
+  /* border-bottom:1px solid #808080;  */
+}
+.searchicon{
+
+  /* background-color: white; */
+  margin-left: 16%;
+  /* left: 30rpx; */
+  width: 20rpx;
+  /* padding-left: 300rpx; */
+  align-items: center;
+  margin-right: 20rpx;
+}
+.search{
+  /* margin-right: 30rpx; */
+  flex: 5;
+  align-self: center;
+  /* width: 100%; */
+  /* background-color: #fff; */
+  /* color:2188d7; */
+}
+.message{
+  /* flex: 1; */
+  vertical-align: center;
+  position: absolute;
+  right:20rpx;
+  top: 1rpx;
+  /* padding: 10rpx; */
+  /* margin: 10rpx; */
+  /* float: right; */
+  padding: 10rpx;
+  display: inline-block;
+  width: 50rpx;
+  height: 50rpx;
+  /* background-size: 20rpx 20rpx */
+}
+
+.fouraction{
+  /* padding: 20rpx; */
+  /* height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; */
+}
+.weui-tabbar {
+  display: flex;
+  position: absolute;
+  top:50px;
+  width: 100%;
+  z-index: 500;
+  /* background-color: #F7F7FA; */
+}
+.weui-tabbar__item {
+  flex: 1;
+  text-align: center;
+  /* 顺时针 */
+  padding: 5px 0 0;
+  font-size: 0;
+  color: #808080;
+}
+/* .weui-tabbar__item > span {
+  display: inline-block;
+  position: relative;
+} */
+.weui-tabbar__icon {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+}
+.weui-tabbar__label{
+  font-family: sans-serif;
+  display: inline-block;
+  position: relative;
+  bottom: 0;
+  left: 0;
+    font-size: 16px;
+ color: #808080;
+  text-align: center;
+  line-height: 1.8;
+  /* font-weight: 1000; */
+  /*相对于font—size*/
+
+}
+.action{
+  background-color: #f7f7f7;
+  display: flex;
+}
+.action text{
+  
+  display: block;
+  float: left;
+}
+.action image{
+  display: block;
+  float: right;
+}
+.ad{
+  margin-top: 40rpx;
+  width: 100%;
+  position: absolute;
+  display: block;
+  top: 300rpx;
+  height: 70px;
+
+  background-size: contain;
+  margin-bottom: 20rpx;
+  
+}
+.action{
+  position: relative;
+  top:40%;
+  width: 100%;
+  height: 100rpx;
+  background: f7f7f7;
+  /* margin-bottom: 30rpx; */
+  align-items: center;
+}
+.action-text{
+  margin: auto 10rpx;
+  display: inline-block;
+  margin-right: 50%;
+  margin-left: 10rpx;
+  /* float: left; */
+  vertical-align: center;
+  /* font-weight: 100 */
+
+}
+.action-img{
+  /* vertical-align: center; */
+  /* display: block; */
+  padding:    auto 20rpx;
+  /* top: 20rpx; */
+  display: inline-block;
+  /* float: right; */
+  width:210rpx;
+  height: 50rpx;
+}
+.scroll-view{
+  display: block;
+  position: relative;
+  top: 40%;
+  left: 0;
+  height: 100%;
+   /* padding: 40rpx; */
+   background-color: #f7f7f7;
+   padding: auto 10rpx;
+}
+.package-item{
+  background-color: white;
+  padding: 40rpx 20rpx 10rpx 20rpx;
+  width: 100%;
+  display: block;
+  position: relative;
+  
+  height: 200rpx;
+ 
+
+}
+.item-title{
+  position: absolute;
+  /* left；0； */
+  /* top:0; */
+  /* left: 0; */
+  font-size: 30rpx;
+  /* line-height: 1.6; */
+  /* margin-bottom: 100rpx; */
+
+}
+.item-block{
+  /* vertical-align: top; */
+  /* padding-left:10rpx;  */
+  height: 150rpx;
+  width: 100%;
+  font-size: 30rpx;
+  line-height: 2;
+
+  position: absolute;
+  top: 90rpx;
+  left: 185rpx;
+  display: block;
+  /* float: right; */
+  font-weight: 20;
+}
+.item-img{
+  display: inline-block;
+  /* padding-left: 46rpx; */
+  position: absolute;
+  width: 145rpx;
+  height: 145rpx;
+  /* left: 0; */
+  top: 90rpx;
+}
+.item-text1{
+  position: absolute;
+  /* letf:150rpx; */
+  /* top: 50rpx; */
+  display: block;
+  vertical-align: top;
+  color: #ff7b19;
+}
+.item-text2{
+  top: 50rpx;
+  position: absolute;
+  display: block;
+  color: #c6c6c6;
+}
+.item-text3{
+  bottom: 1rpx;
+position: absolute;
+display: block;
+color: #c6c6c6;
+}

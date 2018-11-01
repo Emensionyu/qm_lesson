@@ -1,0 +1,88 @@
+<view class="container">
+
+  <view class="search-container" bindtap='searchAnother'>
+    <icon class="searchicon" bindtap="searchInputEvent" type="search" size="25" />
+    <input class="search" type="text" bindinput="searchInputEvent" placeholder=" 一键查询全网包裹"></input>
+
+  </view>
+  <image class="message" src="../../images/5.jpg"></image>
+  <view class="weui-tabbar">
+    <icon href="#" class="weui-tabbar__item weui-tabbar__item_on">
+      <icon>
+        <image mode="aspectFit" src="../../images/saoma.jpg" alt="" class="weui-tabbar__icon"></image>
+      </icon>
+      <icon class="weui-tabbar__label" bindtap='scanCode'>扫一扫</icon>
+    </icon>
+    <icon href="#" class="weui-tabbar__item weui-tabbar__item_on">
+      <icon>
+        <image mode="aspectFit" src="../../images/2.jpg" alt="" class="weui-tabbar__icon"></image>
+      </icon>
+      <icon class="weui-tabbar__label">快递员上门</icon>
+    </icon>
+    <icon href="#" class="weui-tabbar__item weui-tabbar__item_on">
+      <icon>
+        <image mode="aspectFit" src="../../images/3.jpg" alt="" class="weui-tabbar__icon"></image>
+      </icon>
+      <icon class="weui-tabbar__label">精灵书屋</icon>
+    </icon>
+    <icon href="#" class="weui-tabbar__item weui-tabbar__item_on">
+      <icon>
+        <image mode="aspectFit" src="../../images/4.jpg" alt="" class="weui-tabbar__icon"></image>
+      </icon>
+      <icon class="weui-tabbar__label">领裹酱</icon>
+    </icon>
+  </view>
+  <swiper class="ad" indicator-dots='true' indicator-active-color='blue' autoplay='true' bindtap='tapImage'>
+    <swiper-item>
+      <image src='../../images/ad.jpg' mode="widthFix"></image>
+    </swiper-item>
+  </swiper>
+  <view class='action'>
+    <text class='action-text'>进行中</text>
+    <image class='action-img' mode='aspectFill' src='../../images/ad2.jpg'></image>
+
+  </view>
+  <scroll-view class='scroll-view' scroll-y="true">
+
+    <view class='package-item'>
+      <text class='item-title'>有一个神秘包裹想你飞来</text>
+      <image class='item-img' mode='aspectFill' src='../../images/6.jpg'></image>
+      <view class="item-block">
+
+        <text class='item-text1'>已放入裹裹自提柜</text>
+        <text class='item-text2'>菜鸟裹裹</text>
+        <text class='item-text3'>神秘包裹已送至裹裹自提柜</text>
+      </view>
+
+
+
+    </view>
+     <view class='package-item'>
+      <text class='item-title'>有一个神秘包裹想你飞来</text>
+      <image class='item-img' mode='aspectFill' src='../../images/6.jpg'></image>
+      <view class="item-block">
+
+        <text class='item-text1'>已放入裹裹自提柜</text>
+        <text class='item-text2'>菜鸟裹裹</text>
+        <text class='item-text3'>神秘包裹已送至裹裹自提柜</text>
+      </view>
+
+
+
+    </view>
+     <view class='package-item'>
+      <text class='item-title'>有一个神秘包裹想你飞来</text>
+      <image class='item-img' mode='aspectFill' src='../../images/6.jpg'></image>
+      <view class="item-block">
+
+        <text class='item-text1'>已放入裹裹自提柜</text>
+        <text class='item-text2'>菜鸟裹裹</text>
+        <text class='item-text3'>神秘包裹已送至裹裹自提柜</text>
+      </view>
+
+
+
+    </view>
+  </scroll-view>
+
+</view>

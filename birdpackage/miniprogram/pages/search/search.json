@@ -1,0 +1,8 @@
+{
+  "navugationBatTitletext": "Search搜索",
+  "usingComponents": {
+    "van-search": "../../vant-weapp/search/index",
+    "demo-block": "../../components/demo-block/index",
+    "van-switch":"../../vant-weapp/switch/index"
+  }
+}
