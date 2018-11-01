@@ -1,0 +1,30 @@
+<view class="calendar">
+  <calendar>
+  </calendar>
+</view>
+<view class="auth-button" wx:if="{{auth === 0}}">
+  <button open-type="getUserInfo" bindgetuserinfo="getUserInfo">使用该功能需要授权登录</button>
+</view>
+<view>
+  <view class="publish">
+    <view class="title">
+      <text>{{nickname}}, 你今天是什么心情？</text>
+    </view>
+    <view class="colors">
+      <view class="mood" wx:for="{{emotions}}" wx:key="index">
+        <!-- 多种心情，每种展示都有两种可能  active -->
+        <view  bindtap="checkedColor" data-emotion="{{item}}" style="background-color:{{colors[item]}}" 
+        wx:if="{{item === activeEmotion}}">
+          <icon class="emoji" type="{{item}}"/>
+          <icon class="checked" type="checked2" />
+        </view>
+        <view bindtap="checkedColor" data-emotion="{{item}}" 
+        wx:else style="background-color:{{colors[item]}}">
+          <icon type="{{item}}" class="emoji" />
+        </view>
+        <!-- view. -->
+      </view>
+    </view>
+    <button bindtap="submitEmotion">提交心情</button>
+  </view>
+</view>
