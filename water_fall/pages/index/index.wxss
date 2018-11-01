@@ -1,0 +1,6 @@
+.img_item {
+  width: 48%;
+  margin: 1%;
+  display: inline-block; /*在一起*/
+  vertical-align: top;
+}
