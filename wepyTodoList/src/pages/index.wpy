@@ -1,0 +1,26 @@
+<style lang="stylus">
+.container
+    background red
+    text
+        font-size 20pt
+        color green
+
+</style>
+<template>
+    <view class="container"> 
+        <text>{{title}}</text>
+    </view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class index extends wepy.page {
+    config={
+        navigationBarTitleText:'My todoList'
+    }
+    data={
+        todoList :[],
+        title:'我的todoList'
+
+    }
+}
+</script>

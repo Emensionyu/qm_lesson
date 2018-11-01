@@ -1,0 +1,30 @@
+<style lang="stylus">
+
+</style>
+<script>
+  import wepy from 'wepy'
+  // app.wpy 负责app初始化工作 其他的都是page
+  // wepy核心库。命名空间 wepy.app wepy.page
+  // 每个组件文件都默认输出一个类，extends 
+  export default class extends wepy.app{
+    // 属性
+    config={
+      pages:['pages/index'],
+      window:{
+        backgroundTextStyle:'light',
+        navigationBarBackgroungColor:'#fff',
+        navigationBarTitleText:'TodoLise',
+        navigationBarTextStyle:'blaxk'
+      }
+
+    }
+    gloablData={}
+  onLaunch(){
+    console.log("on launch")
+  }
+
+  }
+
+</script>
+
+<template></template>
