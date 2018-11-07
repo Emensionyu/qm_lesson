@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>数据存储</title>
+</head>
+<body>
+<form action="javascript:savaData();" name="userForm">
+  <div class="fieldset">
+    <lable>用户名</lable>
+    <input type="text" name="username" required>
+  </div>
+  <div class="fieldset">
+    <lable>邮箱</lable>
+    <input type="email" name="email" required>
+  </div>
+  <div>
+    <input type="submit" value="保存" />
+    <button onclick="localStorage.removeItem('user'); location.reload()" type="button">清空</button>
+    <!-- ocation.reload() -->
+  </div>
+</form>
+<script>
+    const usernameInput=document.forms['userForm']['username']
+    const emailInput=document.forms['userForm']['email']
+
+    init();
+    function init(){
+        if(localStorage.getItem('user')){
+            const user=JSON.parse(localStorage.getItem('user'));
+            usernameInput.value=user.username;
+            emailInput.value=user.email
+
+        }
+        
+        
+    }
+    function savaData(){
+        const username=usernameInput.value.trim()
+        const email=emailInput.value.trim()
+        const info={
+            username,
+            email,
+            age:21,
+            single:true,
+            rich:'high'
+        }
+        localStorage.setItem('user',JSON.stringify(info));
+        // localStorage.setItem('email',email)
+        
+
+
+
+    }
+    fetch('./info.json')
+    // .then(res=>res.json())
+    .then(data=>{
+        console.log(data);
+    })
+</script>
+</body>
+</html>

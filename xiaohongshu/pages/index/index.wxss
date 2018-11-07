@@ -1,0 +1,36 @@
+.container{
+  height: 100vh;
+  overflow: hidden;
+  background-color: white;
+
+}
+.flex_vert{
+  display: flex;
+  flex-direction: column;
+
+}
+.other{
+  height: 300rpx;
+  margin-bottom: 20rpx;
+  background-color: lightgray;
+
+}
+.notes{
+  flex: 1;
+  background-color: green;
+  overflow: hidden;
+}
+.notes__inner{
+  text-align: center;
+
+}
+.notes__col{
+  width: 46.5%;
+  height: 300rpx;
+  background-color: red;
+  display: inline-block;
+}
+.notes__col-left{
+  background-color: yellow;
+  margin-right: 2.6%;
+}

@@ -1,0 +1,21 @@
+<view style="display:none">
+    <image src="{{test_url}}" bindload="onImageLoad"/>
+
+
+
+</view>
+
+
+<view class="container flex_vert">
+  <view class="other"></view>
+  <scroll-view class="notes" scroll-y bindscrolltoupper="upper" bindscrolltolower="lower" lower-threshold="200">
+      <view class="notes__inner">
+          <view class="notes__col notes__col-left">
+              <view wx:for="{{col1}}" wx:key="_id"></view>
+          </view>
+          <view class="notes__col ">
+              <view wx:for="{{col2 }}" wx:key="_id"></view>
+          </view> 
+      </view>
+  </scroll-view>
+</view>
