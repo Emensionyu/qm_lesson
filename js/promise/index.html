@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+// js 单线程, 事件兼听， Event Loop 
+// setTimeout, cb 挂载到Event Loop 
+//  addEVentListener  1001
+const dsq = async () => {
+  let result = await new Promise((resolve, reject) => {
+    setTimeout(function() {
+      console.log('aaa');
+      resolve('correct');
+    }, 1000);
+  });
+  console.log(result);
+  console.log('bbbb');
+}
+dsq();
+
+
+</script>
+</body>
+</html>

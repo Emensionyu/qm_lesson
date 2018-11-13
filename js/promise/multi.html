@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+const postsPromise = fetch('https://www.easy-mock.com/mock/5bca9240e6742c1bf8220bbd/kicamp/post');
+const streetCarsPromise = fetch('http://data.ratp.fr/api/datasets/1.0/search/?q=paris')
+
+// Promise 异步代码的顺序执行
+// 1. 先执行哪个，一个结果是另一个的需求
+// 2. 不管先后顺序， 只要两者都执行完了就OK
+// postsPromise
+//   .then(res => res.json())
+//   .then(data => {
+//     console.log(data);
+//     // 嵌套 异步问题 js 天生就有，callback回调函数来解决的 回调地狱
+//     return  streetCarsPromise;
+//   })
+//   .then(res => res.json())
+//   .then(data => {
+//     console.log(data);
+//   })
+
+    Promise
+    .all([postsPromise,streetCarsPromise])
+    .then(responses=>{
+      console.log(responses);//二进制流数组
+      // return Promise.all()
+      return Promise.all(responses.map
+      (res=>res.json()))
+      // console.log(responses);
+    })
+    .then(responses=>{
+      console.log(responses);
+      // return Promise.all(responses);
+    })
+    // .then(responses=>{
+    //   console.log(responses);
+
+    // })//都执行。静态方法
+    .catch(err=>{
+      console.log('出错了');
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+// 期许， 诺言  容器 里面放置着耗时的任务，
+// 任务做完后 resolve（成功） 失败后(reject)
+const p = new Promise(
+  (resolve, reject) => {
+  // ajax, 定时器， 数据库操作， 上传下载服务 10s
+  setTimeout(() => {
+    console.log('aaaa');
+    reject('失败');
+  }, 1000);
+})
+
+
+p
+  .then(data => {
+    console.log(data);
+    console.log('bbbb');
+  })
+  .catch(err => {
+    console.error(err);
+  })
+</script>
+</body>
+</html>
