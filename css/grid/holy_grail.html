@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            min-width: 600px;
+        }
+
+        .header,
+        .footer {
+            text-align: center;
+            background: #bbbbbb;
+            width: 100%;
+        }
+
+        .bd {
+            overflow: hidden;
+            padding: 0 200px 0 200px;
+        }
+
+        /* 为什么要放第一列 main里面的内容放第一列，他会实现的最快 */
+        .main {
+            /* 块级元素   */
+            float: left;
+            width: 100%;
+            height: 200px;
+            background-color: #dddddd;
+        }
+
+        .left {
+            width: 200px;
+            float: left;
+            margin-left: -100%;
+            height: 200px;
+            background-color: #da4242;
+            left: -200px;
+            position: relative;
+        }
+        .right{
+            float: right;
+            width: 200px;
+            height: 200px;
+            background-color: #4ddef1;
+            margin-left: -100%;
+            position: relative;
+            left: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">header</div>
+
+    <div class="bd">
+        <div class="main text">Main</div>
+        <div class="left text">Nav</div>
+        <div class="right text">Aside</div>
+    </div>
+    <div class="footer">footer</div>
+
+</body>
+
+</html>
