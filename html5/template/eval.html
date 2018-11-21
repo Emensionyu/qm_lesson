@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- js相对于浏览器 是什么
+    浏览器是宿主 js 是脚本语言
+    支持js语法的编译，二进制
+    就是一段文本而已 text script代码可以进行本地缓存 -->
+
+</body>
+<script>
+    // 将你的js script src 远程的 下载下来 script标签会阻塞页面的执行
+    // 将js文本编译执行
+    const scriptStr="x=10,y=20;document.write(x*y)";
+    eval(scriptStr);
+
+</script>
+
+</html>
