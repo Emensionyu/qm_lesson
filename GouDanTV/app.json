@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/videos/videos",
+    "pages/welcome/welcome",
+    "pages/music/music",
+    "pages/review/review",
+    "pages/videos/video_detail/video_detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#2DC799",
+    "navigationBarTitleText": "狗蛋TV",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "borderStyle": "dark",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/music/music",
+        "text": "音乐",
+        "iconPath": "images/tab/music1.png",
+        "selectedIconPath": "images/tab/music.png"
+      },
+      {
+        "pagePath": "pages/videos/videos",
+        "text": "视频",
+        "iconPath": "images/tab/video1.png",
+        "selectedIconPath": "images/tab/video.png"
+      },
+      {
+        "pagePath": "pages/review/review",
+        "text": "影评",
+        "iconPath": "images/tab/review1.png",
+        "selectedIconPath": "images/tab/review.png"
+      }
+    ]
+  }
+}

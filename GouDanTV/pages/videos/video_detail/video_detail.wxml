@@ -1,0 +1,20 @@
+<import src="../../../components/recommend-item/recommend-template.wxml" />
+<view>
+    <view class='Video-box'>
+      <video id="myVideo" src="http://vali-dns.cp31.ott.cibntv.net/67740658EE0387167B72F329E/03000C2B025A6FA50A0E521B5D86BAE1244238-67F2-A1E4-64D2-6D785A11D048.mp4?ccode=0502&duration=135&expire=18000&psid=0078269654071154205002f32036916d&ups_client_netip=6a06b294&ups_ts=1543046356&ups_userid=349054875&utid=de0nFK4Tp0wCAWoGtX1qB1Qc&vid=XMzMyMjg0NjY0MA&vkey=Aac2980f50d95195724cb7f514dea4aa2&s=b4900b082a004e97a377&iv=1&sp=" controls autoplay></video>
+      <text class='title'>{{video.title}}</text>
+      <text class='time'>发布时间：{{video.time}}</text>
+    </view>
+    <view class='section-title'>
+      <text>相关推荐</text>
+      <view class="line"></view>
+    </view>
+    <view class='recommend-container'> 
+        <block wx:for="{{movieList}}" wx:for-item="item" wx:for-index="idx">
+            <!-- template -->
+            <view catchtap="openDetail" data-list="{{item}}">
+            <template is="recommend-item" data="{{item}}" />
+          </view>
+        </block> 
+    </view>
+  </view>
