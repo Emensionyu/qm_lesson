@@ -7,6 +7,12 @@ page,.main{
   height: 100%;
   box-sizing: border-box;
 }
+.van-search{
+  width: 90%;
+  margin-left:3%;
+  position: absolute;
+  top:0; 
+}
 .search-container {
   height: 60rpx;
   width: 70%;
@@ -75,6 +81,7 @@ page,.main{
 }
 .weui-tabbar__item {
   flex: 1;
+  justify-content: center;
   text-align: center;
   /* 顺时针 */
   padding: 5px 0 0;
@@ -86,20 +93,20 @@ page,.main{
   position: relative;
 } */
 .weui-tabbar__icon {
-  display: inline-block;
-  width: 50px;
-  height: 50px;
+  display: block;
+  width: 40px;
+  height: 40px;
 }
 .weui-tabbar__label{
   font-family: sans-serif;
-  display: inline-block;
+  display: block;
   position: relative;
   bottom: 0;
   left: 0;
-    font-size: 16px;
+    font-size: 14px;
  color: #808080;
   text-align: center;
-  line-height: 1.8;
+  line-height: 1;
   /* font-weight: 1000; */
   /*相对于font—size*/
 
@@ -118,22 +125,30 @@ page,.main{
   float: right;
 }
 .ad{
-  margin-top: 40rpx;
+  margin-top: 30rpx;
   width: 100%;
   position: absolute;
-  display: block;
-  top: 300rpx;
-  height: 70px;
+  display: block;         
+  top: 280rpx;
+  /* height: 90px; */
 
-  background-size: contain;
-  margin-bottom: 20rpx;
+  /* background-size: c; */
+  /* margin-bottom: 20rpx; */
   
+}
+.ad-img{
+  display: block;
+  width:750rpx;
+  /* width: 150%; */
+  height: 100%;
+/* right: 0; */
+/* background-size: contain; */
 }
 .action{
   position: relative;
-  top:40%;
+  top:42%;
   width: 100%;
-  height: 100rpx;
+  height: 120rpx;
   background: f7f7f7;
   /* margin-bottom: 30rpx; */
   align-items: center;
@@ -159,23 +174,33 @@ page,.main{
   height: 50rpx;
 }
 .scroll-view{
+  width: 100%;
   display: block;
   position: relative;
   top: 40%;
   left: 0;
-  height: 100%;
+  /* height: 100%; */
    /* padding: 40rpx; */
    background-color: #f7f7f7;
    padding: auto 10rpx;
 }
-.package-item{
+.item-wrapper{
+
   background-color: white;
-  padding: 40rpx 20rpx 10rpx 20rpx;
+   padding: 40rpx 20rpx 10rpx 20rpx;
+   height: 200rpx;
+   margin-left: 8px;
+   margin-right:8px; 
+}
+.package-item{
+  background-color: #f7f7f7;
+ 
   width: 100%;
   display: block;
   position: relative;
   
-  height: 200rpx;
+  /* height: 200rpx; */
+  margin-bottom:10px; 
  
 
 }
@@ -187,11 +212,12 @@ page,.main{
   font-size: 30rpx;
   /* line-height: 1.6; */
   /* margin-bottom: 100rpx; */
+  font-weight: bold;
 
 }
 .item-block{
   /* vertical-align: top; */
-  /* padding-left:10rpx;  */
+  padding-left:20rpx; 
   height: 150rpx;
   width: 100%;
   font-size: 30rpx;
@@ -232,4 +258,22 @@ page,.main{
 position: absolute;
 display: block;
 color: #c6c6c6;
+}
+.bottomshow{
+  /* position: absolute; */
+  position: relative;
+  display: block;
+  /* margin-right: 10px; */
+  /* margin-left: 100px; */
+  text-align: center;
+  left: 10px;
+  right: 10px;
+  /* bottom: 0; */
+  /* justify-content: center; */
+  padding-bottom:20rpx;
+  font-size: 14px; 
+  color: #4a4a4a;
+}
+.hide{
+  display: none;
 }

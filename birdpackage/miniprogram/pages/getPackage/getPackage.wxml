@@ -1,2 +1,43 @@
-<!--miniprogram/pages/getPackage/getPackage.wxml-->
-<text>miniprogram/pages/getPackage/getPackage.wxml</text>
+<view class="container">
+  <navigator url=''>
+    <text class='top-dot'>...</text>
+  </navigator>
+
+  <image src='https://636c-cloud-912718-1257892962.tcb.qcloud.la/images2/p1.jpg?sign=409830859f714ac51d397b8651976264&t=1542777287' mode='aspectFit' class='image-center'></image>
+
+  <view class='message'>
+    <image src='https://636c-cloud-912718-1257892962.tcb.qcloud.la/images2/p2.jpg?sign=2abd5f90b2cff7653fc6d8b15f4ac925&t=1542776983' mode='aspectFit' class='image-right' bindtap="chooseLocation"></image>
+    <text class='message-text'>
+    <text class='message-text1'> 【菜鸟驿站】广兰大道南区超市菜鸟...></text>
+    <text class='message-text2'>广兰大道418号南区超市内</text>
+    <text class='message-text3'>营业时间：周一至周日08点30分到21点30分</text>
+
+    </text>
+
+  </view>
+  <view class="middle-wrapper">
+     <view   wx:for="{{getPackageList}}" wx:key="index"  wx:for-item="item" data-id="item.id" class="middle">
+    <text class='middle-title'>{{item.getPackageList.text1}}</text>
+    <image class='middle-icon' mode='aspectFill ' src='https://636c-cloud-912718-1257892962.tcb.qcloud.la/images2/p3.jpg?sign=9c02f2ce9ee9e6e26f34441a7a9323c1&t=1542777014'></image>
+    <view class='middle-detail'>
+      <image class='detail-img' src='https://636c-cloud-912718-1257892962.tcb.qcloud.la/images2/p4.jpg?sign=8769f37fc80a68a8e9712e984c51be87&t=1543206474'></image>
+      <view class='detail-text'>
+        <text class='detail-text1'>{{item.getPackageList.text2}}</text>
+        <text class='detail-text2'>{{item.getPackageList.text3}}</text>
+        <image class='m-img' src='https://636c-cloud-912718-1257892962.tcb.qcloud.la/images2/p5.jpg?sign=fc936282fb0627b858a4d966f1cdddbe&t=1542777204'></image>
+      </view>
+    </view>
+    <view class='middle-dialog' bindtap='onSHowdialog' data-index="{{index}}">
+      我已取件
+      <!-- <van-dialog class="dialog" use-slot async-close show="{{ show }}" show-cancel-button     bind:close="onClose"  showConfirmButton="true" showCancelButton="true" overlay="true" 
+        asyncClose="true" title="确认已在驿站取到包裹？" bind:confirm="confirm" bind:cancel="cancel"
+        data-id="{{index}}">
+      </van-dialog> -->
+      <wxc-dialog class="wxc-dialog" title="确认已在驿站取到包裹？" bindcancel="onCancel" bindconfirm="confirm"></wxc-dialog>
+    </view>
+  </view>
+  
+  
+  </view>
+ 
+</view>

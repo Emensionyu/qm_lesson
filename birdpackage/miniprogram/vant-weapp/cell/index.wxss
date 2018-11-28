@@ -11,8 +11,7 @@
   background-color: #ecebf0;
   color: #333;
   font-size: 14px;
-  /* border-top:0.5px solid #999;  */
-  border-radius: 8rpx;
+  border-radius:20px;
 }
 
 .van-cell::after {
@@ -69,7 +68,7 @@
 }
 
 .van-cell__left-icon {
-  font-size: 12px !important;
+  font-size: 16px !important;
   line-height: 24px;
   margin-right: 5px;
   vertical-align: middle;

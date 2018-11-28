@@ -3,6 +3,7 @@
   "usingComponents": {
     "van-search": "../../vant-weapp/search/index",
     "demo-block": "../../components/demo-block/index",
-    "van-switch":"../../vant-weapp/switch/index"
+    "van-switch":"../../vant-weapp/switch/index",
+    "wxc-dialog": "/components/dialog/dialog"
   }
 }

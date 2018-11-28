@@ -1,52 +1,33 @@
-<!-- <view class='container'>
-
-  <!-- <view class="top">
-    <icon class="searchicon-number" bindtap="searchInputEvent" type="search" size="15" />
-    <input class="search-number" type="text" bindinput="searchInputEvent" placeholder=" 一键查询全网包裹"></input>
-
-  </view>
-  <text class='cancel'>取消</text> -->
-<view style='height:100%;width:100%  overflow:hidden;display:flex'>
+<view class='largecontainer'>
   <view class='container'>
     <van-search class="search-top" value="{{value}}" placeholder="请输入运单号" use-action-slot bind:change="onChange" bind:search="onSearch">
-      <view slot="action" bind:tap="cancel">取消</view>
+      <view slot="action" bindtap="cancel">取消</view>
     </van-search>
-    <view class='search-middle'>
-      <image class='car' src='../../images/car.jpg' mode='aspectfit'></image>
-      <text class='middle-text'>默认自动匹配快递公司</text>
-
+    <view class='search-middle' bindtap='selectCompany'>
+      <image class='car' src='{{src}}' mode='aspectfit'></image>
+      <text class='middle-text'>{{company}}</text>
     </view>
     <view class="dr">
-      <image bindtap='selectCompany' class='dr-img' src='../../images/dr.jpg' mode='aspectfit'></image>
+      <image class='dr-img' src='https://636c-cloud-912718-1257892962.tcb.qcloud.la/images2/dr.jpg?sign=8fa530125c0e20b0a6f9b0a39a5afae6&t=1542885013' mode='aspectfit'></image>
     </view>
     <view class='save-list'>
-      <text class='save-text'>保存到包裹列表
-  </text>
-      <van-switch class='save-switch' bind:tap="onClick" size="110%">
-
-      </van-switch>
+      <text class='save-text'>保存到包裹列表</text>
+      <van-switch class='save-switch' bind:tap="onChangeswitch" checked="{{checked}}" size="110%" active-color="#4b0" inactive-color="#f44"></van-switch>
     </view>
-    <view class='search-bottom' bindtap="select" data-number='{{valueNumber}}' data-name='{{valueNumber}}'> 查询</view>
-
-
+    <view class='search-bottom' bindtap="getExpressInfo" data-number='{{no}}' data-name='{{no}}'>
+      查询
+    </view>
   </view>
-    <scroll-view scroll-y style="height:100%; position:absolute;top:42%">
+  <scroll-view scroll-y class='scroll-view'>
     <view class='history'>
-      <view class='history-text'>历史记录</view>
-      <view class='history-item'>
-        <view class='item-num'>7545</view>
-        <view class='item-text'>其他</view>
-        <image class='item-image' mode='aspectFit' src='../../images/x.jpg'></image>
+      <view class='history-text'>{{historyOrder}}</view>
+      <view class='history-item' wx:for="{{historyList}}" wx:key="{{index}}">
+        <view class='item-num'>{{item.code}}</view>
+        <view class='item-text'>{{item.company}}</view>
+        <image class='item-image' mode='aspectFit' src='../../images/x.jpg' data-code='{{item.code}}' bindtap='delectoneHistory'></image>
       </view>
-         <view class='history-item'>
-        <view class='item-num'>7545</view>
-        <view class='item-text'>其他</view>
-        <image class='item-image' mode='aspectFit' src='../../images/x.jpg'></image>
-      </view>
-      
+      <view class='clear-history' bindtap='onSHowdialog'>{{delectHistory}}</view>
+      <wxc-dialog class="wxc-dialog" title="确认全部清除" bindcancel="onCancel" bindconfirm="delectHistory"></wxc-dialog>
     </view>
-
-</scroll-view>
-
-
+  </scroll-view>
 </view>

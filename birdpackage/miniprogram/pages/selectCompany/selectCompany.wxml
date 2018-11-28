@@ -1,2 +1,23 @@
-<!--miniprogram/pages/selectCompany/selectCompany.wxml-->
-<text>miniprogram/pages/selectCompany/selectCompany.wxml</text>
+<view class="container flex_vert ">
+  <view class="search">
+    <view class='search-text'></view>
+    <van-search class="van-search" value="{{ value }}" placeholder="请输入拼音缩写或中文" background="#ffffff" />
+  </view>
+  <scroll-view class='company' scroll-y bindscrolltoupper="upper" bindscrolltolower="lower" scroll-into-view="{{toView}}">
+    <view class='select-list'>
+      <view class='select-word' wx:for="{{scrollList}}" wx:key="{{index}}" data-index='{{index}}' data-id="{{item}}" bindtap='switchTab'>
+        {{item}}
+      </view>
+    </view>
+    <view class='item-A' id='{{item.number}}' hover-stay-time='3000' wx:for="{{comList}}" wx:key="{{index}}" wx:for-item="item" scroll-with-animation="true" scroll-animation-duration="3000">
+      <text>{{item.number}}</text>
+      <view class='company-item' wx:for="{{item.list}}" wx:key="{{index}}" bindtap='backwithData' data-text='{{item.text}}' data-src="{{item.pic}}">
+        <image src='{{item.pic}}' class='item-image' mode='acpectFill'></image>
+        <text class='item-text'>{{item.text}}</text>
+        <icon>
+          <image src='{{item.likepic}}' class='icon'></image>
+        </icon>
+      </view>
+    </view>
+  </scroll-view>
+</view>

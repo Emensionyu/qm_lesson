@@ -2,7 +2,7 @@
 	"miniprogramRoot": "miniprogram/",
 	"cloudfunctionRoot": "cloudfunctions/",
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -10,7 +10,8 @@
 	},
 	"appid": "wxfbc89a830bb2b11c",
 	"projectname": "birdpackage",
-	"libVersion": "2.2.5",
+	"libVersion": "2.3.2",
+	"compileType": "miniprogram",
 	"condition": {
 		"search": {
 			"current": -1,

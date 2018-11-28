@@ -1,4 +1,4 @@
-// miniprogram/pages/my/my.js
+// miniprogram/pages/Tobookroom/index.js
 Page({
 
   /**

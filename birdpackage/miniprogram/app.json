@@ -1,31 +1,35 @@
 {
   "cloud": true,
   "pages": [
-    "pages/search/search",
     "pages/index/index",
     "pages/getPackage/getPackage",
+   
+   
+    "pages/Todetail/index",
+    "pages/search/search",
+    "pages/selectCompany/selectCompany",
     "pages/sendPackage/sendPackage",
     "pages/inn/inn",
-    "pages/my/my",
-    "pages/selectCompany/selectCompany"
+    "pages/Tobookroom/index"
+    
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "white",
-    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTitleText": "菜鸟裹裹",
     "navigationBarTextStyle": "black",
-    "selectColor": "blue"
+    "selectedColor": "#3182d4"
   },
   "tabBar": {
+    "color": "#868686",
+    "selectedColor": "#3182d4",
     "list": [
       {
         "pagePath": "pages/index/index",
         "text": "首页",
         "iconPath": "images/icon/icon_home.png",
-        "selectedIconPath": "images/icon/icon_home_hl.png",
-        "selectColor": "blue",
-        "color": "blue"
+        "selectedIconPath": "images/icon/icon_home_hl.png"
       },
       {
         "pagePath": "pages/getPackage/getPackage",
@@ -40,19 +44,8 @@
         "text": "寄件",
         "iconPath": "images/icon/icon_my.png",
         "selectedIconPath": "images/icon/icon_my_hl.png"
-      },
-      {
-        "pagePath": "pages/inn/inn",
-        "text": "驿站",
-        "iconPath": "images/icon/icon_my.png",
-        "selectedIconPath": "images/icon/icon_my_hl.png"
-      },
-      {
-        "pagePath": "pages/my/my",
-        "text": "我",
-        "iconPath": "images/icon/icon_my.png",
-        "selectedIconPath": "images/icon/icon_my_hl.png"
       }
+      
     ]
   }
 }

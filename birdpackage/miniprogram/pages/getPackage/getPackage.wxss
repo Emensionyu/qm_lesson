@@ -1,1 +1,155 @@
 /* miniprogram/pages/getPackage/getPackage.wxss */
+.container{
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100vh;background-color:  #f8f8f8;
+  padding: 40px 10px 20px 10px;
+}
+
+.top-dot{
+  position: fixed;
+  right: 10px;
+  top:5px;
+  float:right;
+}
+.image-center{
+  position: absolute;
+  top: 10rpx;
+  left: 10px;
+  right: 10px;
+
+  display: block;
+  width: 200rpx;
+  height: 200rpx;
+  margin: 5rpx auto;
+  margin-bottom: 40px; 
+  z-index: 999;
+}
+.message{
+  position: absolute;
+  width: 95%;
+  height: 25vh;
+  background-color: white;
+  border-bottom:1px solid #b3b3b3; 
+}
+.image-right{
+  position: absolute;
+  top: 30rpx;
+  right: 10rpx;
+  width: 180rpx;
+  height: 60rpx;
+}
+.message-text{
+  position: absolute;
+  top: 50px;
+  left: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.message-text1{
+  text-align: center;
+  display: block;
+font-size: 14px;
+}
+.message-text2{
+   text-align: center;
+  display: block;
+font-size: 12px;
+margin-bottom:5px; 
+}
+.message-text3{
+   text-align: center;
+  display: block;
+font-size: 10px;
+}
+.middle-wrapper{
+  position: absolute;
+  top: 156px;
+  width: 100%;
+  height: 60%;
+  right: 6px;left: 10px;
+
+}
+.hide{
+  display:none;
+}
+.middle{
+  /* width: 100%; */
+  padding:  0 0 20px 20px;
+  position: relative;
+  /*  */
+  
+  background-color: white;
+  height: 100px;
+  border: 1px solid #f8f8f8;
+}
+.middle-title{
+  display: inline-block;
+  font-size: 10px;
+  color:#b3b3b3;
+}
+.middle-icon{
+  display: block;
+  width: 10px;
+  height:5px;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+
+}
+.middle-detail{
+  display: flex;
+ position: absolute;
+ padding-top: 20rpx;
+
+}
+.detail-img{
+
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+}
+.detail-text{
+  padding-left:20rpx; 
+  /* display: flex; */
+  position: relative;
+  /* justify-content: center; */
+  align-items: center;
+  padding-top:10px;
+  padding-bottom: 10px; 
+
+}
+.detail-text1{
+  display: block;
+  font-size: 10px;
+  color: #818181;
+  padding-bottom:5px; 
+}
+.detail-text2{
+  display:inline-block;
+  font-size: 10px;
+  color: #fb861c;
+}
+.m-img{
+  vertical-align: middle;
+  display: inline-block;
+  position: relative;
+  width: 30rpx;
+  height: 30rpx;
+  padding-left:10rpx; 
+}
+.middle-dialog{
+  display: block;
+  position: absolute;
+  right: 20px;
+  
+  bottom: 10px;
+  padding: 10rpx;
+  border: 1px solid #3982b9;
+  color: #0090ff;
+  border-radius: 4px;
+  font-size:10px;
+}

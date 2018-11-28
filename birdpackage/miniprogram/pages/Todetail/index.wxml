@@ -1,0 +1,132 @@
+<!-- <view class='canvas-map'>
+<canvas canvas-id='canvas'>
+<map id="myMap" markers="{{markers}}" longitude="{{lon}}" latitude="{{lat}}" scale='16'>
+  </map>
+</canvas>
+</view> -->
+
+<view class='container'>
+  <view class='header'>
+    <view class="container-header">
+      <view class='left'>
+        <image class='left-img1' mode='aspectFit' src='https://636c-cloud-912718-1257892962.tcb.qcloud.la/images2/d1.jpg?sign=418294a51084375aa75faf9c934a232a&t=1542776464'></image>
+        <image class='left-img2' mode='aspectFit' src='https://636c-cloud-912718-1257892962.tcb.qcloud.la/images2/d2.jpg?sign=860b4b91983b5882361fd8518d4f5052&t=1542776482'></image>
+        <text class='left-text'>已签收</text>
+      </view>
+      <view class='right'>
+        <view class='right-box' bindtap='service'>
+          <image src='https://636c-cloud-912718-1257892962.tcb.qcloud.la/images2/d3.jpg?sign=e0896127eca1f639dc3f987713007073&t=1542776506'></image>
+          <text class='right-box_text'>物流客服</text>
+        </view>
+        <view class='right-box' bindtap=' complaint'>
+          <image src='https://636c-cloud-912718-1257892962.tcb.qcloud.la/images2/d4.jpg?sign=88eea48517eae4dd43e484a4011db0b3&t=1542776526'></image>
+          <text class='right-box_text'>物流投诉</text>
+        </view>
+        <view class='right-box'>
+          <image src='https://636c-cloud-912718-1257892962.tcb.qcloud.la/images2/d5.jpg?sign=cd8068ae4d4079e834c6cf1be6a63017&t=1542776546' class='right-box_img3'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <scroll-view scroll-y="{{true}}" class='scroll'>
+    <view class="detail-container">
+      <image class='errormessage' src='https://636c-cloud-912718-1257892962.tcb.qcloud.la/images2/error.jpg?sign=5e662ac9d3f2137611fbc78ed57f7d91&t=1542776565'></image>
+      <view class='talkinn'>
+        <text class='inn-text'>评价驿站 东华理工大学南区七栋菜鸟驿站</text>
+        <view class='innbar'>
+          <image src='https://636c-cloud-912718-1257892962.tcb.qcloud.la/images2/ink.jpg?sign=dcf1be9f08dc50684d63fb521fc3573a&t=1542776591' class='inn'></image>
+          <view class='stars'>
+            <image src='https://636c-cloud-912718-1257892962.tcb.qcloud.la/images2/star.jpg?sign=be15af8bc087f1bc75ab4e7b2eec88b3&t=1542811791' class='star'></image>
+            <image src='https://636c-cloud-912718-1257892962.tcb.qcloud.la/images2/star.jpg?sign=be15af8bc087f1bc75ab4e7b2eec88b3&t=1542811791' class='star'></image>
+            <image src='https://636c-cloud-912718-1257892962.tcb.qcloud.la/images2/star.jpg?sign=be15af8bc087f1bc75ab4e7b2eec88b3&t=1542811791' class='star'></image>
+            <image src='https://636c-cloud-912718-1257892962.tcb.qcloud.la/images2/star.jpg?sign=be15af8bc087f1bc75ab4e7b2eec88b3&t=1542811791' class='star'></image>
+            <image src='https://636c-cloud-912718-1257892962.tcb.qcloud.la/images2/star.jpg?sign=be15af8bc087f1bc75ab4e7b2eec88b3&t=1542811791' class='star'></image>
+          </view>
+        </view>
+        <view class='inn-bottom'>
+          <text class='inn-bottom_text'>{{company}}  {{code}}</text>
+          <image src='https://636c-cloud-912718-1257892962.tcb.qcloud.la/images2/error.jpg?sign=ae3162eb21f9eb321f3cf443751cd5ef&t=1542776616' class='errormessage2'></image>
+        </view>
+      </view>
+      <view class='detail'>
+        <view class='detail-data1'>
+          <view class='time'></view>
+          <view class='shouicon'>
+            <image class='icon' src='https://636c-cloud-912718-1257892962.tcb.qcloud.la/images2/shou.jpg?sign=2b723580f5bcd7a63fadcafca12f7fac&t=1542776646' class='icon1'></image>
+          </view>
+          <view class='data-msg'>
+            <view class='data-msg_title'></view>
+            <view class='data-msg_article'>【收货地址】江西省南昌市青山湖区 蛟桥镇 东华理工大学广兰大道广兰校区</view>
+          </view>
+        </view>
+        <view class='detail-data'>
+          <view class='time'>{{time1}}</view>
+          <view class='shouicon'>
+            <image class='icon2' src='https://636c-cloud-912718-1257892962.tcb.qcloud.la/images2/shou2.jpg?sign=ab586f9e02814f37c32b3673be252728&t=1542776674'></image>
+          </view>
+          <view class='data-msg'>
+            <view class='data-msg_title'>已签收</view>
+            <view class='data-msg_article'>您已在东华理工大学南区七栋菜鸟驿站完成取件，感谢使用菜鸟驿站，期待再次为您服务。</view>
+            <text class='data-select'>我要退货</text>
+            <text class='data-select'>联系卖家</text>
+            <text class='data-select'>查看订单</text>
+          </view>
+        </view>
+        <view class='detail-data'>
+          <view class='time'>{{time2}}</view>
+          <view class='shouicon'>
+            <image class='icon2' src='https://636c-cloud-912718-1257892962.tcb.qcloud.la/images2/shou3.jpg?sign=0df85fc9d103f7717e2b963f2f5f7746&t=1542776695'></image>
+          </view>
+          <view class='data-msg'>
+            <view class='data-msg_title'>待取件</view>
+            <view class='data-msg_article'>您已在东华理工大学南区七栋菜鸟驿站完成取件，感谢使用菜鸟驿站，期待再次为您服务。</view>
+          </view>
+        </view>
+        <view class='detail-data1'>
+          <view class='time'>{{time3}}</view>
+          <view class='shouicon'>
+            <image class='icon2' src='https://636c-cloud-912718-1257892962.tcb.qcloud.la/images2/shou4.jpg?sign=949a5b5f8436e0933e279c7dab7d99f0&t=1542776714'></image>
+          </view>
+          <view class='data-msg'>
+            <view class='data-msg_title'>派送中</view>
+            <view class='data-msg_article'>{{text3}}</view>
+          </view>
+        </view>
+        <view class='detail-data1'>
+          <view class='time'>{{time3}}</view>
+          <view class='shouicon'>
+            <image class='icon2' src='https://636c-cloud-912718-1257892962.tcb.qcloud.la/images2/shou5.jpg?sign=bdab3c461441de6b8cea13589bb4dfc2&t=1542776737'></image>
+          </view>
+          <view class='data-msg'>
+            <view class='data-msg_title'>运输中</view>
+            <view class='data-msg_article'>{{text3}}</view>
+          </view>
+        </view>
+        <view class='detail-data2' wx:for="{{Traces2}}" wx:key="index">
+          <view class='time'>{{item.AcceptTime}}</view>
+          <view class='shouicon2'>
+            <image class='icon2' src='https://636c-cloud-912718-1257892962.tcb.qcloud.la/images2/shou6.jpg?sign=2c10e0b37d9ac31b88a1c5d836ef7ffb&t=1542776755'></image>
+          </view>
+          <view class='data-msg'>
+            <view class='data-msg_title'></view>
+            <view class='data-msg_article'>{{item.AcceptStation}}</view>
+          </view>
+        </view>
+        <view class='detail-data'>
+          <view class='time'>{{time3}}</view>
+          <view class='shouicon3'>
+            <image class='icon3' src='https://636c-cloud-912718-1257892962.tcb.qcloud.la/images2/shou7.jpg?sign=f7309cadf586fa539d3a04b77488dd97&t=1542776785'></image>
+          </view>
+          <view class='data-msg'>
+            <view class='data-msg_title'>已揽件</view>
+            <view class='data-msg_article'></view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<!-- <view id='map'> -->
+
+
+<!-- </view> -->

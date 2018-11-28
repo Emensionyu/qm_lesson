@@ -1,88 +1,75 @@
 <view class="container">
 
-  <view class="search-container" bindtap='searchAnother'>
-    <icon class="searchicon" bindtap="searchInputEvent" type="search" size="25" />
-    <input class="search" type="text" bindinput="searchInputEvent" placeholder=" 一键查询全网包裹"></input>
-
-  </view>
-  <image class="message" src="../../images/5.jpg"></image>
+  <van-search class="van-search" value="{{ value }}" placeholder="请输入拼音缩写或中文" background="#ffffff" bindtap="searchAnother" />
+   
+  <image class="message" src="https://636c-cloud-912718-1257892962.tcb.qcloud.la/images2/5.jpg?sign=62596b8fb882fafa4735a7bb02ec48cf&t=1542775874"></image>
   <view class="weui-tabbar">
     <icon href="#" class="weui-tabbar__item weui-tabbar__item_on">
       <icon>
-        <image mode="aspectFit" src="../../images/saoma.jpg" alt="" class="weui-tabbar__icon"></image>
+        <image mode="aspectFit" src="https://636c-cloud-912718-1257892962.tcb.qcloud.la/images2/saoma.jpg?sign=22ecf7d2269084181e8ace24c1319b06&t=1542775996" alt="" class="weui-tabbar__icon"></image>
       </icon>
       <icon class="weui-tabbar__label" bindtap='scanCode'>扫一扫</icon>
     </icon>
-    <icon href="#" class="weui-tabbar__item weui-tabbar__item_on">
+    <icon href="#" class="weui-tabbar__item weui-tabbar__item_on" >
       <icon>
-        <image mode="aspectFit" src="../../images/2.jpg" alt="" class="weui-tabbar__icon"></image>
+        <image mode="aspectFit" src="https://636c-cloud-912718-1257892962.tcb.qcloud.la/images2/2.jpg?sign=2c956d50da50cdf22b74812d1cc51b12&t=1542776039" alt="" class="weui-tabbar__icon"></image>
       </icon>
-      <icon class="weui-tabbar__label">快递员上门</icon>
+      <icon class="weui-tabbar__label" >快递员上门</icon>
     </icon>
-    <icon href="#" class="weui-tabbar__item weui-tabbar__item_on">
+    <icon href="#" class="weui-tabbar__item weui-tabbar__item_on" >
       <icon>
-        <image mode="aspectFit" src="../../images/3.jpg" alt="" class="weui-tabbar__icon"></image>
+        <image mode="aspectFit" src="https://636c-cloud-912718-1257892962.tcb.qcloud.la/images2/3.jpg?sign=a9cbe061ac103a8e380f73f8c56cec2c&t=1542776057" alt="" class="weui-tabbar__icon"></image>
       </icon>
       <icon class="weui-tabbar__label">精灵书屋</icon>
     </icon>
-    <icon href="#" class="weui-tabbar__item weui-tabbar__item_on">
+    <icon href="#" class="weui-tabbar__item weui-tabbar__item_on" >
       <icon>
-        <image mode="aspectFit" src="../../images/4.jpg" alt="" class="weui-tabbar__icon"></image>
+        <image mode="aspectFit" src="https://636c-cloud-912718-1257892962.tcb.qcloud.la/images2/4.jpg?sign=da2382ecf07e72710947db853406d600&t=1542776076" alt="" class="weui-tabbar__icon"></image>
       </icon>
       <icon class="weui-tabbar__label">领裹酱</icon>
     </icon>
   </view>
-  <swiper class="ad" indicator-dots='true' indicator-active-color='blue' autoplay='true' bindtap='tapImage'>
-    <swiper-item>
-      <image src='../../images/ad.jpg' mode="widthFix"></image>
+  <swiper class="ad" indicator-dots='true' indicator-active-color='blue' autoplay='true'>
+    <swiper-item wx:for="{{imageList}}" wx:key="index" wx:for-item="item">
+      <image src="{{item.pic}}" mode="widthFix" bind:tap="tapImage" class='ad-img'></image>
     </swiper-item>
   </swiper>
   <view class='action'>
     <text class='action-text'>进行中</text>
-    <image class='action-img' mode='aspectFill' src='../../images/ad2.jpg'></image>
-
+    <image class='action-img' mode='aspectFill' src='https://636c-cloud-912718-1257892962.tcb.qcloud.la/images2/ad2.jpg?sign=ae6b53f73ba106c5be937df83b016e07&t=1542776132'></image>
   </view>
-  <scroll-view class='scroll-view' scroll-y="true">
+  <loading hidden="{{isLoading}}"></loading>
+<scroll-view class='scroll-view' scroll-y="true">
+<view class='package-item'  wx:for="{{expressLists}}" wx:key="{{item.contentId}}"
+ wx:for-item="item" data-contentId='{{item.text3}}' bindtap='toDetail'>
+    
+     <view class='item-wrapper'> 
 
-    <view class='package-item'>
-      <text class='item-title'>有一个神秘包裹想你飞来</text>
-      <image class='item-img' mode='aspectFill' src='../../images/6.jpg'></image>
+      <text class='item-title'>{{item.text1}}</text>
+      <image class='item-img' mode='aspectFill' src='{{item.image}}'></image>
       <view class="item-block">
+        <text class='item-text1'>{{item.text2}}</text>
+        <text class='item-text2'>{{item.text3}}</text>
+        <text class='item-text3'>{{item.text4}}</text>
+      </view>
+      </view>
+    </view>
+<view class='package-item'>
+    <view class='item-wrapper'>
 
+     <text class='item-title'>有一个神秘包裹想你飞来</text>
+      <image class='item-img' mode='aspectFill' src='https://636c-cloud-912718-1257892962.tcb.qcloud.la/images2/6.jpg?sign=e713b1367255f2bd83f8098aaac630d4&t=1542776179'></image>
+      <view class="item-block">
         <text class='item-text1'>已放入裹裹自提柜</text>
         <text class='item-text2'>菜鸟裹裹</text>
         <text class='item-text3'>神秘包裹已送至裹裹自提柜</text>
       </view>
-
-
-
+    
+    
     </view>
-     <view class='package-item'>
-      <text class='item-title'>有一个神秘包裹想你飞来</text>
-      <image class='item-img' mode='aspectFill' src='../../images/6.jpg'></image>
-      <view class="item-block">
-
-        <text class='item-text1'>已放入裹裹自提柜</text>
-        <text class='item-text2'>菜鸟裹裹</text>
-        <text class='item-text3'>神秘包裹已送至裹裹自提柜</text>
-      </view>
-
-
-
-    </view>
-     <view class='package-item'>
-      <text class='item-title'>有一个神秘包裹想你飞来</text>
-      <image class='item-img' mode='aspectFill' src='../../images/6.jpg'></image>
-      <view class="item-block">
-
-        <text class='item-text1'>已放入裹裹自提柜</text>
-        <text class='item-text2'>菜鸟裹裹</text>
-        <text class='item-text3'>神秘包裹已送至裹裹自提柜</text>
-      </view>
-
-
-
-    </view>
+     
+</view>
+<text class='{{bottomshow== true? "bottomshow":"hide"}}' bindtap='watchMore'>查看全部</text>
   </scroll-view>
-
+  
 </view>

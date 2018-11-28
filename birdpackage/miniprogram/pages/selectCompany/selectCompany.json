@@ -1,1 +1,6 @@
-{}
+{
+  "navigationBarTitleText": "选择快递公司 ",
+  "usingComponents": {
+    "van-search": "../../vant-weapp/search/index"
+  }
+}
