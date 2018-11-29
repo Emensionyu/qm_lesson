@@ -39,6 +39,8 @@ Page({
 
   },
   confirm:function(event){
+    let dialogComponent = this.selectComponent('.wxc-dialog');
+    dialogComponent && dialogComponent.hide();
     console.log(event);
     // let id=event.currentTarget.dataset.id;
     // console.log(id);

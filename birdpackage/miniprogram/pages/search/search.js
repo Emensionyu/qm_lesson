@@ -120,7 +120,7 @@ Page({
             historyOrder: "历史记录"
           })
           // this.setData({ mydata: res.data})
-          if (!res.data.Reason) {
+          if (!res.data.Reason) {//请求成功并且有完整的物流信息即加入数据库，
             expresses.where({
               code: exp
             }).count().then(res3 => {
