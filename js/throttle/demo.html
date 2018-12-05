@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Throttle 节流</title>
+  <style>
+  #container {
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    background: #666666;
+    line-height: 500px;
+    text-align: center;
+    color: white;
+    font-size: 100px;
+  }
+  </style>
+</head>
+<body>
+  <div id="container">0</div>
+  <script>
+    //   function throttle(func,wait){//事件处理函数被调用，内部的this指向container
+    //         var context ,args;//闭合空间的变量
+    //         var previous=0;
+    //         return function(){
+    //           console.log(this);
+    //           var now=Date.parse(new Date());//+new Data() 
+    //           context=this;
+    //           console.log(now)
+    //         //   console.log(func.prototype  )
+    //         args=arguments;
+    //         // console.log(args);
+    //         if(now-previous>wait){
+    //             func.apply(context,args);
+    //             previous=now;
+    //         }
+             
+    //       }
+
+    //   }
+
+        function throttle( func,wait){
+            var timeout,
+            context,
+            args,
+            previous=0;
+            console.log(timeout);
+            return function(){
+                context=this;
+                args=arguments;
+                if(!timeout){//第一次timeout为undefied 执行，等一秒
+                    console.log(timeout)
+                    timeout=setTimeout(function(){//一秒内timeout为真不执行 一秒时 null 又开始循环执行               
+                        timeout=null;
+                        func.apply(context,args);
+                    },wait)//返回计时器的索引下标          
+                }
+            }
+
+        }
+      const container=document.getElementById('container');
+      function getUserAction(){
+          let num=parseInt(this.innerHTML);//parseInt
+          this.innerHTML=++num;
+       
+      }
+      container.onmousemove=throttle(getUserAction,
+      1000)
+    //   container.addEventListener('mousemove',)
+  
+  </script>
+</body>
+</html>
