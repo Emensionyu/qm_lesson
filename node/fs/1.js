@@ -1,73 +1,55 @@
-// var fs = require('fs');
-// var data;
-// try {
-//     data=fs.readFileSync
-// ('./fileForRead1.txt','utf8');
-// console.log(data);
-// } catch (err) {
-//     console.error('读取文件出错：'+err.message);
-// }
-// function foo(){
-//     console.log(this.a)
+const fs=require('fs');//common js
+try{
+    // fs.readFile('./a.txt','utf8',
+    // function(err,data){
+    //     console.log(data);
+    //     fs.readFile('./b.txt','utf8',function(err,data){
+    //         console.log(data);
+    //     })
+    // })
 
-// }
-// var obj={
-//     a:2,
-//  foo:foo
-// }
 
-// var s=obj.foo;
-// s();
-//s()不带任何修饰的函数调用
-//-------------------------------
-// {function foo(){
-//     console.log(this.a)
+    // const dataA=fs.readFileSync('./a.txt','utf8');
+    // const datab=fs.readFileSync('./b.txt','utf8');
+    // const datac=fs.readFileSync('./c.txt','utf8');
+    const fileAPromise= new Promise((resolve,reject)=>{
+        fs.readFile('./a.txt','utf8',function(err,data){
+            if(err){
+                reject()//reject 后 进入.catch()
+            }else{
+                resolve(data)//读取成功
+            }
+        })
 
-// }
-// var obj={
-//     a:2,
-//  foo:foo
-// }
-// function dofoo(fn){
-//     fn();
-// }
-// dofoo(obj.foo);}
+    })
+    const B=new Promise((resolve,reject)=>{
+        fs.readFile('./b.txt','utf8',function(err,data){
+            if(err){
+                reject(err);
+            }else{
+                resolve(data)
 
-//---------------------------------
-    // function foo(){
-    //     console.log(this.a)
-    
-    // }
-    // var obj={
-    //     a:2,
-    //  foo:foo
-    // }
-    // setTimeout(obj.foo,1000);
-    //隐式绑定
-//-------------------------------
-    // var a=4;
-    // function foo(a){
-    //     this.a=a;
-    // }
-    // var bar=new foo(2);
-    // console.log(bar.a);
+            }
 
-//----------------------
-//隐式绑定与new 绑定优先级比较
-    function foo(something){
-        this.a=something;
-    }
-
-    var obj1={
-        foo:foo
-    };
-    var obj2={};
-    obj1.foo(2);
-    console.log(obj1.a);
-
-    obj1.foo.call(obj2,3);
-    console.log(obj2.a);
-
-    var bar=new obj1.foo(4);
-    console.log(obj1.a);
-    console.log(bar.a);
+        })
+    })
+    // fileAPromise
+    // .then(data=>{
+    //     console.log(data);
+    //     return B;
+    // })
+    // .then(data=>{
+    //     console.log(data);
+    // })//开始执行
+    // .catch(err=>{
+    //     console.log(err);
+    // })
+   Promise.all([fileAPromise,B])
+   .then(response=>{
+       console.log(response);
+   })
+   
+   
+}catch(e){
+    console.log('读取文件失败'+e.message)
+}
