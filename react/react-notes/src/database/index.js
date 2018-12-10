@@ -1,4 +1,3 @@
-
 import Loki from 'lokijs'
 // db 句柄
 export const db = new Loki('notes',{
