@@ -1,83 +1,116 @@
 import React from 'react';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Switch,Redirect} from 'react-router-dom';
+// Redirect 跳转到第一个链接
 
-function BasicExample () {
+function AnimationExample() {
   return (
     <Router>
-      <div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <Link to="/topics">Topics</Link>
-          </li>
-        </ul>
-        <hr/>
-        <Route exact path="/" component={Home}/>
-        <Route path="/about" component={About}/>
-        <Route path="/topics" component={Topics}/>
-      </div>
+      <Route 
+        render={({location}) => (
+          <div style={styles.fill}>
+            {/*JSON.stringify(location)*/}
+            <Route
+            exact
+            path="/"
+            render={()=><Redirect to="/hsl/10/90/50"/>}
+            />
+            <ul style={styles.nav}>
+              <NavLink to="/hsl/10/90/50">Red</NavLink>
+              <NavLink to="/hsl/120/100/40">Green</NavLink>
+              <NavLink to="/rgb/33/150/243">Blue</NavLink>
+              <NavLink to="/rgb/240/98/246">Pink</NavLink>
+            </ul>
+
+            <div style={styles.content}>
+              <Switch location={location}>
+                <Route exact path="/hsl/:h/:s/:l" component={HSL} />
+                <Route exact path="/rgb/:r/:g/:b" component={RGB} />
+              </Switch >
+            </div>
+          </div>
+        )}
+      />
     </Router>
   );
 }
 
-function Home() {
+function NavLink(props) {
   return (
-    <div>
-      <h2>Home</h2>
-    </div>
-  )
-}
-function About() {
-  return (
-    <div>
-      <h2>About</h2>
-    </div>
+    <li style={styles.navItem}>
+      <Link {...props}/>
+    </li>
   )
 }
 
-function Topics({match }) {
-  return(
-    <div>
-      <h2>Topics</h2>
-      <ul>
-        <li>
-          <Link to={`${match.url}/rendering`}>Rendering with React</Link>
-        </li>
-        <li>
-          <Link to={`${match.url}/components`}>Components</Link>
-        </li>
-        <li>
-          <Link to={`${match.url}/props-v-state`}>Props  State</Link>
-        </li>
-      </ul>
-      <Route path={`${match.url}/:topicId`} component={Topic}/>
-      <Route path={match.url}
-      render={()=><h3>Please select a topic.</h3>}
-      />
-      
+function HSL({ match: { params } }) {
+  return (
+    <div
+      style={{
+        ...styles.fill,
+        ...styles.hsl,
+        background: `hsl(${params.h}, ${params.s}%, ${params.l}%)`
+      }}>
+      hsl({params.h}, {params.s}%, {params.l}%) 
     </div>
   )
 }
 
-function Topic({match}) {
+function RGB({ match: { params } }) {
   return (
-    <div>
-      {match.params.topicId}
-      {/* {match.params} */}
+    <div
+      style={{
+        ...styles.fill,
+        ...styles.rgb,
+        background: `rgb(${params.r}, ${params.g}, ${params.b})`
+      }}
+    >
+      rgb(
+      {params.r}, {params.g}, {params.b})
     </div>
-  ) 
+  );
 }
 
+const styles = {};
+styles.fill = {
+  position: "absolute",
+  left: 0,
+  top: 0,
+  bottom: 0,
+  right: 0
+};
+styles.content = {
+  ...styles.fill,
+  top: '40px',
+  textAlign: 'center'
+}
+styles.nav = {
+  position: "absolute",
+  padding: 0,
+  margin: 0,
+  top: 0,
+  height: "40px",
+  width: "100%",
+  display: 'flex'
+}
+styles.navItem = {
+  flex: 1,
+  textAlign: 'center',
+  listStyleType: 'none',
+  padding: '10px'
+}
+styles.hsl = {
+  ...styles.fill,
+  color: "white",
+  paddingTop: "20px",
+  fontSize: "30px"
+};
 
-
-ReactDOM.render(<BasicExample />, document.getElementById('root'));
+styles.rgb = {
+  ...styles.fill,
+  color: "white",
+  paddingTop: "20px",
+  fontSize: "30px"
+};
+ReactDOM.render ( <AnimationExample />, document.getElementById('root'))
