@@ -64,7 +64,7 @@ class Note extends Component {
             {this.words() }字
             {this.state.open&&
             <i className="right floated trash outline icon" 
-             onClick={()=>{this.state.destoryEntity(this.state.entity)}}></i>
+             onClick={()=>{this.     state.destoryEntity(this.state.entity)}}></i>
             }
           </div>
         </div>
@@ -73,7 +73,7 @@ class Note extends Component {
       </div>
     );
   }
-  updateEntity = (event) => {
+  updateEntity = (event) => {// 属性初始化
     const _body = event.target.value
     this.setState({
       body: _body

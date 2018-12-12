@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JSX</title>
+  <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+  function format(user) {
+    return user.firstName + ' ' + user.lastName;
+  }
+  const user = {
+    firstName: 'Harper',
+    lastName: 'Perez'
+  }
+  const name = 'Josh Perez'; 
+//   const element = (
+//     <h1>
+//       hello, { format(user) }
+//     </h1>
+//   );
+//   ReactDOM.render(
+//     <div>
+//       {element}
+//     </div>
+//     ,
+//     // document.getElementById('root')
+//   ) 
+    // DOM 
+    // const element=React.createElement(//标签，属性，子节点
+    //     'h1',
+    //     { className:'greeting'},
+    //     'Hello World'
+    // )
+    const users=[{
+        name:'Tom',
+        type:'cat'
+    },{
+        name:'Jerry',
+        type:'mouse'
+
+    }]
+    const ele=(
+        <ul>
+            {users.map((user,index)=> <li key={index}>{user.name}-{user.type}</li>)}
+        </ul>
+    )
+    // const element=React.createElement(
+    //     'ul'
+    //     {className:'actor'}
+    //     //'li' 'users[0].name+users[0].type+<br>+users[1].name+user[1].type'
+    // '{users.map((user,index)=> <li>{user.name+user.type}</li>)}'
+    // )
+  ReactDOM.render(ele ,
+      document.getElementById('root'))
+  </script>
+</body>
+</html>

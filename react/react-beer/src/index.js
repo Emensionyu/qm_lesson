@@ -10,6 +10,6 @@ render(
         <div>
         <Route exact path="/" component={App} /> 
         {/* <Route path="/beer" component={Single} />  */}
-        <Route  path="/search/:searchTerm" component={App}  /> 
+        <Route  path="/search/:searchTerm" component={Single}  /> 
          </div>
     </BrowserRouter>,document.getElementById('root'));//首页路由 声明路由访问的route 定义规则

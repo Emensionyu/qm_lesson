@@ -1,5 +1,5 @@
 import React,{Component} from 'react'//结构
-import Input from "../presentational/Input";
+import Input from "../presentational/input";
 
 class FormContainer extends Component{
     constructor(){
@@ -11,12 +11,13 @@ class FormContainer extends Component{
     }
     render(){
         // wxml 
+        const seo_title=this.state.seo_title
         return (
             <form id="article-form">
                 <Input
                 text="SEO title"
                 label="seo_title"
-                type="trxt"
+                type="text"
                 id="seo_title"
                 value={seo_title}
                 handleChange={this.handleChange}

@@ -8,11 +8,11 @@ const Input = ({ label, text, type, id, value, handleChange }) => (
       type={type}
       className="form-control"
       id={id}
-      value={this.value}
+      value={value}
       onChange={handleChange}
       required
     />
-    <div>{this.state.seo_title}
+    <div>{value}
         </div>
   </div>
 );

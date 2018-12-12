@@ -10,3 +10,5 @@ a 太弱了 ，所以react-router 给了我们Link组件 to href params
 - ref react 里的id DOm 利用它找到jsx 的片段
 React.createRef() 返回一个不重复的id
 this.searchRef.current
+- context 最后一个大佬 component lifecycles state ,事件 函数式组件
+ this.context.router.history.push( `/search/${searchTerm}`);
