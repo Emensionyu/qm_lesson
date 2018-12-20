@@ -1,0 +1,15 @@
+{
+  "name": "generator",
+  "version": "1.0.0",
+  "description": "* 生成器函数 封装着异步执行的代码\r yield 停下来，右边为promise，左边为待resolvedata\r 生成器函数调用得到生成器 dataGen=step()\r next 一下 可被迭代\r {value:上一次迭代之后的data,done:false}",
+  "main": "demo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^2.3.0"
+  }
+}

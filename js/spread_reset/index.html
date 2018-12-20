@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2 class="jump">SPREADS!</h2>
+    <script>
+        const heading = document.querySelector('.jump')
+    //     heading.innerHTML=sparaWrap(heading.textContent)
+    //    console.log(heading.textContent) 
+       heading.innerHTML=[...heading.textContent].map((letter)=>`<span>${letter}</span>`).join('');
+    //    heading.innerHTML=[...heading.textContent].forEach((index,item)=>{`<span>${l}</span>`);
+
+       
+    //       
+    
+
+    </script>
+</body>
+
+</html>

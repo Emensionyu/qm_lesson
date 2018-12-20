@@ -18,8 +18,6 @@
        constructor(props){
            super(props);
            //节流一下 控制事件的执行
-    
-
            this.log=_.throttle((event)=>{
                console.log(event.target.value);
            },1000);
