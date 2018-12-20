@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>高阶组件</title>
+  <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+</head>
+<body>
+  <!-- {/* 高阶函数
+  React 世界一等公民 组件
+  函数的返回值是组件， 参数是组件
+  Higher Order Component, 组件的设计模式 */} -->
+  <div id="root"></div>
+  <script type="text/babel">
+  class Student extends React.Component {
+    static sayHello () {
+      console.log('Hello from Student');
+    }
+    constructor (props) {
+      super(props)
+    }
+    inputElement = React.createRef();
+    componentWillMount() {
+      this.setState({
+        name: this.props.name,
+        age: this.props.age
+      })
+    }
+    componentDidMount(){
+        this.props.inputRef(this.inputElement.current)
+    }
+    render () {
+      return (
+        <div>
+          <p>姓名：{this.state.name}</p>
+          <p>
+            年纪: <input value={this.state.age}
+            onChange={(e) => {
+              this.setState({
+                age: e.target.value
+              })
+            }} 
+           ref={this.inputElement}
+            />
+          </p>
+          <p>
+            <input type="button"
+              value="focus input"
+              onClick={this.focus}
+              />
+          </p>
+        </div>
+      )
+    }
+    focus = (e) => {
+       console.log(this.inputElement);
+      this.inputElement.current.focus();
+    }
+  }
+  // 高阶组件， 比普通组件多些功能
+  function EnhanceWrapper(WrappedComponent) {
+    //   console.log(props);
+    let inputElement=null;
+    function handleClick(){
+        inputElement.focus();
+        console.log(inputElement);
+    }
+    function WrappedComponentStatic(){
+        WrappedComponent.sayHello();
+    }
+    return (props) => (
+      // Student 放进去？ 
+      <div>
+        <WrappedComponent
+        inputRef={el=>{inputElement=el}}//新增一个属性连接包装函数的节点
+          {...props}
+          
+        />
+        <input type="button"
+        value="focus子组件input"
+        onClick={handleClick}
+        />
+        <input type="button"
+        value="调用子组件static"
+        onClick={WrappedComponentStatic}
+        />
+      </div>
+    )
+   
+  }
+  const WrapperComponent = EnhanceWrapper(Student);
+
+
+  ReactDOM.render(
+  <WrapperComponent name="小明" age={18}
+  /> , document.getElementById('root'));
+  </script>
+</body>
+</html>

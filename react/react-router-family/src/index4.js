@@ -59,11 +59,17 @@ function ParamsExample(){
 
     );
 }
-function Child({location}){
+function Yahoo({to}){
+  return(
+    <div>
+      {to.search}
+      </div>
+  )
+}
+function Child(){
     return(
         <div>
-            {location.search}
-
+            {/* {location.search} */}
         </div>
     )
 }

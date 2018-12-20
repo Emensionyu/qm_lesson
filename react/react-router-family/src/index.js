@@ -1,116 +1,121 @@
 import React from 'react';
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Link, Switch,Redirect} from 'react-router-dom';
-// Redirect 跳转到第一个链接
+import { BrowserRouter as Router, Route,Link,Prompt,Redirect,withRouter } from 'react-router-dom';
 
-function AnimationExample() {
-  return (
-    <Router>
-      <Route 
-        render={({location}) => (
-          <div style={styles.fill}>
-            {/*JSON.stringify(location)*/}
-            <Route
-            exact
-            path="/"
-            render={()=><Redirect to="/hsl/10/90/50"/>}
-            />
-            <ul style={styles.nav}>
-              <NavLink to="/hsl/10/90/50">Red</NavLink>
-              <NavLink to="/hsl/120/100/40">Green</NavLink>
-              <NavLink to="/rgb/33/150/243">Blue</NavLink>
-              <NavLink to="/rgb/240/98/246">Pink</NavLink>
-            </ul>
-
-            <div style={styles.content}>
-              <Switch location={location}>
-                <Route exact path="/hsl/:h/:s/:l" component={HSL} />
-                <Route exact path="/rgb/:r/:g/:b" component={RGB} />
-              </Switch >
+// 鉴权
+const fakeAuth={
+    isAuthenticated:false,
+    authenticate(cb){
+        this.isAuthenticated=true;
+        setTimeout(cb,1000);
+    },
+    signout(cb){
+        this.isAuthenticated=false;
+        setTimeout(cb,1000);
+    }
+}
+function AuthExample(){
+    return(
+        <Router>
+            <div>
+                <AuthButton  /> 
+                {/* 下面没加exact表示严格匹配  */}
+                {/* <Route path="/" component={AuthButton}/> */}
+                <ul>
+                    <li>
+                        <Link to="/public">public Page</Link>
+                    </li>
+                    <li>
+                        <Link to="/protected"> Protected Page</Link>
+                    </li>
+                </ul>
+                <Route path="/public" component=
+                {Public}/>
+                 <Route path="/login" component=
+                {Login}/>
+                 <PrivateRoute path="/protected" component=
+                {Protected}/>
             </div>
-          </div>
-        )}
-      />
-    </Router>
-  );
+        </Router>
+    )
 }
 
-function NavLink(props) {
-  return (
-    <li style={styles.navItem}>
-      <Link {...props}/>
-    </li>
-  )
+function Public(){
+    return <div>Public</div>
+}
+function Protected(){
+    return <div>Protected</div>
 }
 
-function HSL({ match: { params } }) {
-  return (
-    <div
-      style={{
-        ...styles.fill,
-        ...styles.hsl,
-        background: `hsl(${params.h}, ${params.s}%, ${params.l}%)`
-      }}>
-      hsl({params.h}, {params.s}%, {params.l}%) 
-    </div>
-  )
-}
+function PrivateRoute({component:Component,...rest}){
+    //合并
+    return (
+        <Route 
+        {...rest}//解构
+        render={
+            props=>
+            fakeAuth.isAuthenticated?(
+                <Component/>
+            ):
+            <Redirect to={{
+                pathname:"/login",
+                state:{from:props.location}
+                
+            }}/>
+        }
 
-function RGB({ match: { params } }) {
-  return (
-    <div
-      style={{
-        ...styles.fill,
-        ...styles.rgb,
-        background: `rgb(${params.r}, ${params.g}, ${params.b})`
-      }}
-    >
-      rgb(
-      {params.r}, {params.g}, {params.b})
-    </div>
-  );
+        
+        />
+    )
 }
+class Login extends React.Component{
+    state={
+        redirectToReference:false//组件值改变
+    }
+    login=()=>{
+        fakeAuth.authenticate(()=>{
+            this.setState({
+                redirectToReference:true
+            })
+        })
+       
+    }
+    render(){
+        let { from }=this.props.location.state||{from :{
+            pathname:"/"
+        }};
+        console.log(from);
+        let redirectToReference=this.state.redirectToReference;
+        if(redirectToReference)return  <Redirect to={from}/>
+        return(
+            <div>
 
-const styles = {};
-styles.fill = {
-  position: "absolute",
-  left: 0,
-  top: 0,
-  bottom: 0,
-  right: 0
-};
-styles.content = {
-  ...styles.fill,
-  top: '40px',
-  textAlign: 'center'
+                <p>You must log in to view  the page at{from.pathname}</p>
+                <button onClick={this.login}> Login</button>
+            </div>
+            
+        )
+    }
 }
-styles.nav = {
-  position: "absolute",
-  padding: 0,
-  margin: 0,
-  top: 0,
-  height: "40px",
-  width: "100%",
-  display: 'flex'
-}
-styles.navItem = {
-  flex: 1,
-  textAlign: 'center',
-  listStyleType: 'none',
-  padding: '10px'
-}
-styles.hsl = {
-  ...styles.fill,
-  color: "white",
-  paddingTop: "20px",
-  fontSize: "30px"
-};
+//装饰 返回的不是简单组件而是一个单一功能的路由
+const AuthButton=withRouter(({history})=>{
+    return fakeAuth.isAuthenticated?(
+     <p>Welcom!
+         <button onClick={()=>{
+             fakeAuth.signout(()=>{
+                 //Redirect?
+                 //js 并非jsx输出
+                //  console.log()
+                 history.push('/')
 
-styles.rgb = {
-  ...styles.fill,
-  color: "white",
-  paddingTop: "20px",
-  fontSize: "30px"
-};
-ReactDOM.render ( <AnimationExample />, document.getElementById('root'))
+
+
+             });
+         }}
+         >Sign out</button>
+    </p>
+    ):(
+        <p> Ypu are not logged in.</p>
+     );
+})
+ReactDOM.render ( <AuthExample />, document.getElementById('root'))
