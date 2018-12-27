@@ -13,7 +13,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="app">
+        <div className="app skin-app">
           <header className="app-header">
             <img src={logo} className="app-logo" alt="logo"/>
             <h1 className="app-title">React Music</h1>
