@@ -20,3 +20,5 @@ api 代码的重复 违反了dry
 生命周期 _setUp() contextTypes
 connect rezct-redux HOC
 
+- connect 封装 有关的context的操作都交给它
+- 后代组件，只需要做自己的事
