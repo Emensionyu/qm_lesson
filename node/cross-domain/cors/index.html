@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+<script>
+// 简单
+// $.ajax({
+//   url: 'http://localhost:3000',
+//   type: 'get',
+//   success: function(data) {
+//     console.log(data);
+//   }
+// })
+// // 非简单
+$.ajax({
+  url: 'http://localhost:3000',
+  type: 'POST',
+  contentType: 'application/json',
+//   请求头内容设置
+  data: {
+    type: 'json'
+  },
+  success: function(data) {
+    console.log(data);
+  }
+})
+</script>
+</body>
+</html>
