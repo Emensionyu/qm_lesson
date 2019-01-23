@@ -10,4 +10,5 @@ module.exports = app => {
   router.get('/api', controller.api.index);
   // api 版本的后缀
   apiV2Router.post('/login/register',controller.login.register);
+  apiV2Router.post('/login',controller.login.loginIn);
 };

@@ -12,3 +12,4 @@ CSRF 跨站请求伪造，
     db:migrate:undo 回滚重新创建表
   最后采坑 在postman里发送请求 手动设置username，password，email
   ctx.request.body才可以拿到
+truncate 清空数据表

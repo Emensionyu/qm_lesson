@@ -16,5 +16,8 @@ module.exports = appInfo => {
     password:'123',
     database:'learn'
   }
+  config.password_secret='mensionyu94';
+  config.auth_cookie_name='hahaha';
+  config.jwtSecret='oosehun'
   return config;
 };
