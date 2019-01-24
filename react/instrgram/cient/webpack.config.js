@@ -32,30 +32,10 @@ module.exports = {
           }
         ]
       },
+     
       {
         test: /\.(css|less|scss)$/,
-        use: [ 'style-loader', 
-        {
-            loader:'css-loader',
-        }
-          // 'css-loader'
-        , 'sass-loader' ],
-        include:/node_modules/
-      },
-      {
-        test: /\.(css|less|scss)$/,
-        use: [ 'style-loader', 
-        {
-            loader:'css-loader',
-            options:{
-              modules:true,
-              localIdentName:'[local]--[hash:base64:5]'
-            }
-           
-        }
-          // 'css-loader'
-        , 'sass-loader' ],
-        exclude:/node_modules/
+        use: [ 'style-loader', 'css-loader','sass-loader' ],
       },
      
       

@@ -14,10 +14,11 @@ class LoginController extends Controller {
         domain:'127.0.0.1'
       }
       ctx.cookies.set(this.config.auth_cookie_name,token,opts);
-      ctx.status=200;
-      ctx.body={
-        message:'登入成功'
-      }
+      // ctx.status=200;
+      // ctx.body={
+      //   message:'登入成功'
+      // }
+      ctx.returnBody(200,"登入成功")
 
 
     }else{
