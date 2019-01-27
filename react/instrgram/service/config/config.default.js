@@ -7,6 +7,8 @@ module.exports = appInfo => {
   config.keys = appInfo.name + '_1548144146726_7792';
 
   // add your config here
+  config.authWhiteList = ['/','/api/v2/','/api/v2/login', '/api/v2/user/register'];
+  config.middleware = ['authorization'];
   config.middleware = [];
   config.security={csrf:{ enable:false}}
   config.sequelize={

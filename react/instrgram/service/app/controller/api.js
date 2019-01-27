@@ -4,7 +4,7 @@ const Controller = require('egg').Controller;
 
 class ApiController extends Controller {
   async index() {
-    this.ctx.body = 'hi, api';
+    this.ctx.body = this.ctx.user;
   }
 }
 

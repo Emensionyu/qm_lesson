@@ -58,27 +58,29 @@ class LoginForm extends React.Component{
         })
 
     }
-    handleSubmit(e){
+    handleSubmit (e) {
         e.preventDefault();
-        this.props.form.validateFields(async(err,values)=>{
-            if(!err){
-                console.log(values);
-                let response=await API.login(values);
-                console.log(response);
+        this.props.form.validateFields(async (err, values) => {
+            if (!err) {
+                console.log('Received values of form: ', values);
+    
+                let response = await API.login(values)
                 notification['success']({
-                    message:'4登入成功' 
+                    message: response.message
                 })
+    
+                // 登录成功后，获取用户基础数据
+              
+                // this.getUserinfo()
+                
+                const { history } = this.props;
+                // 跳转登录
+                setTimeout(() => {
+                    history.push('/')
+                }, 500)
             }
-            const {history}=this.props;
-            setTimeout(() => {
-                history.push('/');
-
-            }, 500);
-        })
-
-
-    }
-
+        });
+      }
 }
 const WrappedLoginForm=Form.create()(LoginForm)
 export default withRouter(WrappedLoginForm);
