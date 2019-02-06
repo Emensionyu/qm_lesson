@@ -1,0 +1,52 @@
+:local(.notice){
+    text-align: center;
+    margin-left: 4.9rem;
+    font-size: .12rem;
+    background-color: #fff;
+   
+
+}
+.nav-left{
+   
+    height:25px;
+    padding-left: 1.43rem;
+    display: flex;
+    align-items: center;
+    background-color: #f2f2f2;
+    font-size: 14px;
+    float: left;
+    .nav-link{
+        line-height: 25px;
+        color: #717171;
+        text-decoration:none;
+        margin-right: 6px;
+    }
+    a:hover{
+        color: #ffc300;
+    }
+    .navBar{
+        display: flex;
+        align-items: center;
+       img{
+            margin-right: 4px;
+        }
+    }
+    .nav-hint{
+        color: #aaaaaa;
+        margin-right: 6px; 
+        margin-left: 6px;
+    }
+    
+
+}
+.nav-right{
+    @extend .nav-left;
+    float: right;
+    .nav-item .icon-rotate{
+        transition:transform .2s 0.15s ;
+    }
+    .nav-item .icon-rotate:hover{
+        transform:  rotate(-180deg);
+
+    }
+}

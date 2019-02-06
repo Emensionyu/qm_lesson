@@ -1,0 +1,16 @@
+{
+    "presets": ["env", "react", "stage-0"],
+    "plugins": [
+        "transform-class-properties",
+      "transform-decorators-legacy",//观察者
+      "transform-runtime",//异步编译
+      [
+          "import",
+          {
+              "libraryName": "antd",
+              "libraryDirectory": "es",
+              "style": "css"
+          }
+      ]
+   ]
+  }
