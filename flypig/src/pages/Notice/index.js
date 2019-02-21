@@ -1,20 +1,14 @@
 import React from 'react';
-import { BrowserRouter as Router,Route,Switch} from 'react-router-dom';
-import Notice from './pages/Notice/notice.js'
-import '@scss/base.scss';
-import './index.scss'
+import Style from './index.scss'
 
 
-class Flypig extends React.Component{
+class Notice extends React.Component{
     render(){
-        return(
-        <div>
-           
+        return (<div className={Style.notice}>
+        【公告】文化和旅游部提示广大游客涉水有风险，参与需谨慎
         </div>
-
-            
-        )
+            )
     }
     
 }
-export default Flypig;
+export default Notice;

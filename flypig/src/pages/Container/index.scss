@@ -1,0 +1,62 @@
+:local(.container){
+   display: flex;
+   align-items: bottom;
+   padding-top: 20px;
+   font-size: .12rem;
+   margin-left:.66rem;
+   justify-content: space-between;
+   margin-right: 1.72rem;
+   .flypig-icon{
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       img{
+           width: 1.23rem;
+           height: .54rem;
+       }
+       margin-right: 1.25rem;
+   }
+   .searchbar{
+       display: flex;
+       flex-direction: column;
+    .selectitem{
+        display: inline-block;
+        .categora-name{
+            display: inline-block;
+            // width: .4rem;
+            // height: .25rem;
+            font-size:.12rem;
+            padding-top: .05rem;
+            color:#fdc817;
+            font-weight:900;
+            text-align: center;
+            background-color: #fff;
+            margin-left:.1rem;
+            padding: 5px;
+            background-color: #ffffff;
+
+        }
+        .selected{
+            color: wheat;
+            background-color: #fdc817;
+        }
+    }
+  
+    
+     
+    
+   }
+   .concatways{
+     display: flex;
+     align-items: center;
+     flex-direction: column;
+     justify-content: center;
+    span{
+        display: block;
+    }
+
+
+   }
+  
+
+}
