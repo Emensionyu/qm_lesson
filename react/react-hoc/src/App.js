@@ -1,43 +1,65 @@
-import React, { Component } from 'react';
-import DocumentType from './DocumentType';
-import './App.css';
-
+import React, { Component } from 'react'
+import CommentInput from './CommentInput'
+import CommentList from './CommentList'
+// import Autof from './Autof';
 class App extends Component {
-  state = {
-    tags: ['草稿', '关于', '常见问题', '组件开发','廖颖是个大胖子你是是吧'],
-    selectedTags: [] 
-  }
+
+    constructor () {
+        super()
+        this.state = {
+          comments: []
+        }
+      }
+      componentWillMount () {
+        this._loadComments()
+      }
+    
+      _loadComments () {
+        let comments = localStorage.getItem('comments')
+        if (comments) {
+          comments = JSON.parse(comments)
+          this.setState({ comments })
+        }
+      }
+    
+      _saveComments (comments) {
+        localStorage.setItem('comments', JSON.stringify(comments))
+      }
+    
+      handleSubmitComment (comment) {
+        if (!comment) return
+        if (!comment.username) return alert('请输入用户名')
+        if (!comment.content) return alert('请输入评论内容')
+        const comments = this.state.comments
+        comments.push(comment)
+        this.setState({ comments })
+        this._saveComments(comments)
+      }
+      handlechange(text){
+          this.setState({
+              text
+          })
+
+      }
+      handleDDD(index){
+        const comments = this.state.comments
+    comments.splice(index, 1)
+    this.setState({ comments })
+    this._saveComments(comments)
+
+      }
   render() {
     return (
-      <div className="App">
-        <DocumentType 
-          selectedTags={this.state.selectedTags}
-          tags={this.state.tags}
-          addTag={this.addTag}
-          onChange={this.onChange}
-          activeColor="#123"
-          onClose={this.onClose}
+      <div>
+        <CommentInput onSubmit={this.handleSubmitComment.bind(this)} />
+        <CommentList comments={this.state.comments}
+        onDD={this.handleDDD.bind(this)}
         />
+        {this.state.text}
+       
       </div>
-    );
-  }
-  addTag = (tag) => {
-    const tags = this.state.tags;
-    this.setState({
-      tags: [...tags, tag]
-    })
-  }
-  onChange = (tag) => {
-    const tags=this.state.selectedTags;
-    if(tags.indexOf(tag)===-1){
-      this.setState({
-        selectedTags:[...tags,tag]
-      })
-    }
-  }
-  onClose=(index)=>{
-    console.log(index);
+    )
   }
 }
 
-export default App;
+export default App
