@@ -74,7 +74,7 @@ module.exports = {
       new HtmlWebPackPlugin({
           template: path.resolve(clientPath, "index.html"),
           filename: "index.html",
-          favicon: path.resolve(clientPath, "assets/image/favicon.ico")
+          favicon: path.resolve(clientPath, "assets/image/fliggy.jpg")
       }),
       new webpack.HotModuleReplacementPlugin()
   ]

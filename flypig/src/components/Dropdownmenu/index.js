@@ -9,7 +9,6 @@ class Dropdownmenu extends Component{
         //     hover:false
         // }
     }
-    
     render () { 
         return (
             <div className="nav-right_item"   

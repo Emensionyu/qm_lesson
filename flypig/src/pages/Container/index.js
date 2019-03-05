@@ -77,10 +77,7 @@ select2(){
               </div>
               <Search 
               placeholder={`${this.state.selected?'目的地/酒店/景点/签证等':''}`}
-                
-                // enterButton={suffix}
               />
-      
             </div>
             <div className="concatways">
                 <span>消费者热线(国内)9510208</span>

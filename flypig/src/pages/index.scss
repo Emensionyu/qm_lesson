@@ -1,15 +1,17 @@
 
 :local(.header){
+    min-width: 930px;
+    width:  1190px;
     max-height:.26rem;
+    width:100%;
     box-sizing:border-box;
     background-color: #f2f2f2;
-    width: 100%;
+    // width: 100%;
     display: flex;
     justify-content: space-between;
     border-top:.01rem solid #F2F2F2;
     border-bottom:.01rem solid #F2F2F2;
     box-sizing:border-box;
-
 .nav-left{
     padding-left: 1.43rem;
     display: flex;
@@ -17,6 +19,7 @@
     font-size: .1rem;
     line-height: .26rem;
     .nav-link{
+        display: inline-block;
         color: #717171;
         text-decoration:none;
         margin-right: .06rem;
@@ -25,6 +28,7 @@
         color: #ffc300;
     }
     .navBar{
+        display: inline-block;
         display: flex;
         align-items: center;
        img{
@@ -32,6 +36,7 @@
         }
     }
     .nav-hint{
+        // display: inline-block;
         color: #aaaaaa;
         margin-right: .06rem; 
         margin-left: .06rem;
@@ -39,15 +44,14 @@
     
 
 }
-.nav-right{
-    // border-bottom:.01rem solid white;
-}
+
 .qrcode{
     width: .6rem;
     height: .6rem;
 }
 .nav-right{
     @extend .nav-left; 
+    padding: 0;
     }
     .menu-a{
         font-size: .1rem;

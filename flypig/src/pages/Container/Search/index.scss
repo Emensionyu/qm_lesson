@@ -1,3 +1,6 @@
+:local(.search){
+    
+}
 :local(.fpsearch){
     display:flex;
     box-sizing: border-box;
@@ -28,4 +31,45 @@
 
     }
 
+}
+:local(.historyOrder){
+    border:.01rem solid rgba(rgb(107, 100, 100),.1);
+    width: 100%;
+    box-sizing: border-box;
+    padding: .2rem;
+    background-color: #fffdf5;
+    font-size: .12rem;
+    .describe{
+        display: flex;
+        align-items: center;
+        color:#999999;
+        word-wrap: none;
+        margin-bottom: .1rem;
+        .icon-time{
+            width: .15rem;
+            height: .15rem;
+            margin-right: .1rem;
+            
+        }  
+        .order-search{
+            margin-left: .1rem;
+        }   
+    }
+    .orders{
+        display: flex;align-items: center;
+        flex-direction: row;
+    }
+    .order-item{
+        margin-bottom: .1rem;
+        display: inline-block;
+        height: .15rem;
+        line-height: .15rem;
+        display: inline-block;
+        margin-right: .1rem;
+
+    }
+    .order-item:first-of-type{
+        margin-left: .22rem;
+    }
+    
 }
