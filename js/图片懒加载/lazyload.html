@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style>
+body{
+  margin: 0;
+}
+img{
+  height: 100px;
+  width: 100px;
+}
+</style>
+</head>
+<body>
+<button>加载图片</button>
+<img src="#" alt="测试" data-original = "./myimg.png">
+<script>
+var oBtn = document.getElementsByTagName('button')[0];
+var oImg = document.images[0];  
+oBtn.onclick = function(){
+//   oImg.src = "myimg.png";
+//   console.log(oImg.dataset)
+  if(oImg.dataset){
+    aftLoadImg(oImg,oImg.dataset.original);  
+  }else{
+    aftLoadImg(oImg,oImg.getAttribute("data-original"));
+  }
+}
+function aftLoadImg(obj,url){
+  var oImg = new Image();
+  oImg.onload = function(){
+    obj.src = oImg.src;
+  }
+  oImg.src = url;
+}
+</script>  
+</body>
+</html>
