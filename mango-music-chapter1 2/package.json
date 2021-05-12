@@ -17,7 +17,7 @@
     "react-lazyload": "^2.3.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.17",
-    "swiper": "^4.4.6"
+    "swiper": "^6.5.1"
   },
   "devDependencies": {
     "poststylus": "^1.0.0",
