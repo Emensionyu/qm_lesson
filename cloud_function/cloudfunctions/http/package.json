@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "got": "^9.2.2",
+    "got": "^11.8.5",
     "wx-server-sdk": "latest"
   }
 }
